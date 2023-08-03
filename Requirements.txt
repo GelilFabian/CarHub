@@ -1,0 +1,66 @@
+Utilizatorul deschide browserul.
+Utilizatorul va introduce link-ul aplicatiei in bara de adrese a brwoser-ului si va apasa enter.
+
+Dupa ce utilizatorul apasa butonul "enter", se va afiseaza Landing Page pe care va fi un formular de autentificare, situat pe mijlocul paginii, care contine:
+un textbox pentru email, un textbox pentru parola, un checkbutton pentru "Tine-ma minte", un buton de "Creare Cont" , un buton de "Autentificare" si un
+buton de "Am uitat parola".
+
+Daca nu are cont, utilizatorul va apasa pe butonul "Creare Cont", care va deschide o alta pagina cu un formular de inscriere care contine un textbox
+pentru email(required), unul pentru parola(required), inca un textbox pentru confirmarea parolei(required) si un buton unde scrie "Inregistrare".
+Pentru functionarea butonului "Inregistrare", campurile trebuie completate corespunzator formatului lor.
+Dupa ce utilizatorul va completa campurile si va apasa butonul "Inregistrare", email-ul si parola se vor salva in baza de date si se va afisa inapoi Landing Page.
+
+Pentru ca formularul sa tina minte email ul si parola utilizatorului(pentru a nu fi nevoit utilizatorul sa introduca email-ul si parola mereu),se vor
+completa campul email si campul parola si se va bifa
+checkbutton-ul "Tine-ma minte" inainte de apasarea butonului "Autentificare".
+
+Dupa ce utilizatorul va apasa pe butonul "Autentificare", se va trimite un request catre baza de date cu informatia din campurile respective pentru a vedea
+corectitudinea lor.
+
+Daca email sau parola sunt gresite sau daca nu se vor completa campurile,pagina va afisa un pop up cu mesajul "Email sau parola gresite" si un buton de
+"Reincearca".
+Dupa apasarea butonului "Reincearca", fereastra pop up se va inchide si va permite utilizatorului sa editeze campurile text.
+Daca datele sunt corecte, se va afisa Home Page care contine in partea stanga un buton pentru deschiderea sau inchiderea NavBar-ului si in centru, Home Page
+va afisa cate un div care contine o poza si o scurta descriere a unei stiri din domeniul auto, iar la apasarea oricarui div, pagina va deschide o alta pagina care
+contine toata informatia despre acea stire.
+Aceste noutati vor fi adaugate de un admin in sectiunea din mijlocul Home Page-ului.
+Daca utilizatorul se afla in partea de top sau mid a Home Page-ului si da scroll-down, se vor incarca stirile mai vechi.
+Daca utilizatorul se afla in partea de bottom sau mid a Home Page-ului si da scroll-up, se vor incarca stirile actuale.
+
+La apasarea butonului din stanga de pe Home Page, se va deschide, lent cu ajutorul animatiilor, NavBar-ul care va contine 3 butoane: 1)Profil Utilizator,
+2)Comparare, 3)Forumuri pentru discutii.
+
+1)Profil utilizator:
+Cand utilizatorul face click pe acest link, se va afisa o pagina care contine acelasi NavBar in partea stanga iar pe mijloc va fi afisata o sectiune unde
+se va afla poza de profil a utilizatorului impreuna cu numele acestuia langa ea, sub se vor afisa brand-ul masinii, modelul, anul fabricatiei, anul, motori-
+zarea, o mica descriere, buton pentru editare profil, buton pentru afisarea listei de prieteni, buton pentru afisarea grupurilor
+din care fac parte si un buton pentru setarile aplicatiei.
+Cand utilizatorul va apasa butonul de editare profil, se va afisa sectiunea de editare a datelor si un buton de salvare a modificarilor facute.
+Cand utilizatrul va apasa butonul pentru afisarea listei de prieteni, pagina va face un request la baza de date pentru a alege utilizatorii care sunt asociati
+cu contul utilizatorului si se va afisa pe o pagina noua o lista cu acestia in ordine alfabetica.
+Cand utilizatrul va apasa butonul pentru afisarea grupurilor din care face parte, pagina va face un request la baza de date pentru a alege grupurile din
+care face parte utilizatorul si se vor afisa pe o pagina noua toate grupurile asociate cu contul utilizatorului.
+Cand utilizatorul va apasa butonul de setari ale aplcatiei, se va deschide o pagina care contine un buton schimbarea parolei,un buton pentru schimbarea
+temei paginii(light sau dark) si un buton pentru stergerea contului.
+Cand utilizatorul va apasa butonul de schimbare a parolei, se va afisa o pagina cu un textbox pentru a se introduce parola actuala, un textbox pentru
+a se introduce parola noua si un buton pentru a salva modificarile facute.
+Cand utilizatorul va apasa pe butonul de schimbare a temei paginii, se va afisa o pagina cu 3 variante de alegere: automat(prestabilit), light sau dark.
+La alegerea temei light, aplicatia va avea drept culoare principala alb, iar la alegerea temei dark, culoarea principala in aplicatie va fi un gri graphite.
+La apasarea de catre utilizator a butonului de stergere a contului, se va afisa o fereastra cu un buton de confirmare.
+La apasarea butonului de confirmare a stergerii contului, se va afisa Landing Page si se va trimite un request catre baza de date pentru stergerea
+email-ului si parolei din evidenta.
+
+2)Comparare masini:
+Cand utilizatorul face click pe acest link, se va afisa o pagina care contine acelasi NavBar in partea stanga iar pe mijloc va fi afisat un div impartit
+in 2 parti: prima parte pentru alegerea primei masini , a 2 a parte pentru alegerea masinii 2 si un buton de start comparare. Fiecare parte va afisa: un
+dropdown-list pentru alegerea marcii masinii, unul pentru model, unul pentru tipul caroseriei si unul pentru motorizarea masinii. Toate aceste informatii
+din dropdown-uri se vor extrage dintr-o baza de date. La apasarea fiecarui dropdown, se va afisa o lista aferenta fiecarui tip de informatie.
+La apasarea butonului de comparare masini, sub acest div se va afisa un alt div care afiseaza o poza pentru fiecare masina, sub poze se vor afisa brand-ul
+si marca masinilor, iar sub acestea se vor afisa informatiile legate de anul productiei, informatii legate de dimensiuni, informatii ale motoarelor, clasa
+masinilor si siguranta in caz de impact. De asemenea, va exista si o rubrica de review-uri lasate de proprietarii masinilor.
+
+3)Forum:
+Facand click pe acest link, se va afisa o pagina care contine acelasi NavBar in partea stanga iar pe mijloc vor fi afisate mai multe cadrane cu diferite
+subiecte de discutie recente si un searchbar pentru a cauta subiecte in functie de cuvintele cheie scrise. Subiectele de discutie vor fi niste cadrane care
+afiseaza titlul subiectului si autorul postarii, iar aceste cadrane se vor afla una sub alta, pe latimea div-ului central.
+La accesarea unui subiect, se va deschide pagina dedicata acelei discutii, cu textul integral, data postarii si replicile oferite de ceilalti utilizatori.

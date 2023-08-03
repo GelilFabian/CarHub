@@ -1,0 +1,29 @@
+@startuml
+'https://plantuml.com/class-diagram
+class Utilizator {
+}
+class Landing_Page {
+}
+class formular_autentificare {
+}
+class email_textbox {
+}
+class parola_textbox {
+}
+class checkbutton {
+}
+class buton_creare_cont {
+}
+class buton_autentificare {
+}
+class buton_am_uitat_parola {
+}
+
+Landing_Page o.. formular_autentificare
+formular_autentificare *.. email_textbox
+formular_autentificare *.. parola_textbox
+formular_autentificare *.. checkbutton
+formular_autentificare *.. buton_creare_cont
+formular_autentificare *.. buton_autentificare
+formular_autentificare *.. buton_am_uitat_parola
+@enduml

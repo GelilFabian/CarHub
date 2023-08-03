@@ -1,0 +1,85 @@
+@startuml
+'https://plantuml.com/use-case-diagram
+left to right direction
+actor Utilizator as u
+
+package LandingPage {
+    usecase "Se afiseaza \n Landing Page \n pe care va fi \n un formular de \n autentificare" as UC20
+    usecase "Se va deschide \n o pagina cu un \n formular de inscriere" as UC21
+    usecase "Email-ul si parola se \n vor salva in baza de date" as UC22
+    usecase "Se va trimite un request \n catre baza de date cu corectitudinea \n informatiei din campurile respective" as UC23
+    usecase "Formularul va tine \nminte email si parola" as UC24
+    usecase "Pagina va afisa un \n pop up cu mesajul \n"Email sau parola gresite" \n si un buton de "Reincearca"" as UC25
+    usecase "Fereastra Pop-up \n se va inchide" as UC26
+}
+
+package HomePage {
+    usecase "Se afiseza Home Page care \n contine in partea stanga un \n buton pentru deschiderea sau \n inchiderea NavBar-ului si in centru \n se va afisa cate un div cu \n noutatile si stirile din domeniul auto" as UC15
+    usecase "Se deschide NavBar-ul care \n va contine 3 butoane: \n 1.Profil utilizator , 2.Comparare, \n 3.Forum" as UC16
+    usecase "Pagina va deschide \nalta pagina care \ncontine toata informatia \n legata de acea stire" as UC17
+    usecase "Se incarca stirile mai vechi, \ndandu-se scroll in jos la paina" as UC18
+    usecase "Se incarca stirile actuale,\n dandu-se scroll in sus la pagina" as UC19
+}
+
+package 1)Profil_Utilizator {
+    usecase "Se afiseaza pagina destinata profilului de \n utilizator care contine poza de profil, numele, \n descriere, detalii despre masina, un buton de \n editare date, un buton de afisare prieteni, buton \n de afisare grupuri si un buton destinat setarilor aplicatiei" as UC1
+    usecase "Se va afisa sectiunea de \n editare a datelor si un buton \n de salvare a modificarilor" as UC2
+    usecase "Se va trimite un request \n catre baza de date pentru a \n alege utilizatorii care sunt \n asociati cu contul utilizatorului" as UC3
+    usecase "Se va afisa pe o pagina \n noua o lista cu acestia \n in ordine alfabetica" as UC4
+    usecase "Se va trimite un request \n catre baza de date pentru a \n alege grupurile din care face parte" as UC5
+    usecase "Se vor afisa pe o pagina \n noua toate grupurile asociate \n cu contul utilizatorului" as UC6
+    usecase "Se va deschide o pagina \n care contine un buton pentru\n schimbarea parolei,un buton \n pentru schimbarea temei paginii si  \n un buton pentru stergerea cotului." as UC7
+    usecase "Se va afisa o pagina cu un \n textbox pentru a se introduce \n parola actuala, un textbox pentru \n a se introduce parola noua si un \n buton pentru a salva modificarile facute" as UC8
+    usecase "Se va afisa o pagina cu 3 variante \n de alegere: automat, light sau dark" as UC9
+    usecase "Aplicatia va avea drept \n culoare principala alb" as UC10
+    usecase "Aplicatia va avea drept \n culoare principala gri graphite" as UC11
+    usecase "Se va afisa o fereastra cu \n un buton de confirmare" as UC12
+    usecase "Se va afisa \n Landing Page" as UC13
+    usecase "Se va trimite un request \n catre baza de date pentru \n stergerea email-ului \n si parolei din evidenta" as UC14
+}
+
+'Landing Page
+u --> UC20: Introduce linkul aplicatiei \n in browser si apasa enter
+u --> UC21: Apasa pe butonul \n 'Creare Cont'
+u --> UC22:Completeaza campurile pentru \ninregistrare si apasa 'Inregistrare'
+UC22 --> UC20
+u --> UC23:Completeaza campurile pentru \nautentificare si apasa 'Autentificare'
+u --> UC24:Bifeaza checkbox\n-ul 'Tine-ma minte'
+UC23 --> UC25:Daca datele \n sunt gresite
+UC23 --> UC15:Daca datele \nsunt corecte
+u -->UC26:Apasa butonul \n 'Reincearca'
+
+
+:Admin: --> (Se vor afisa in Home Page in partea de sus):Introduce noutati si \n stiri din domeniul auto in \n div-urile din mijlocul \n Home Page-ului
+
+
+'Home Page
+u --> UC16:Apasa pe \n butonul de NavBar
+u --> UC17:Apasa pe \n orice div din \n din Home Page.
+u --> UC18:Se afla in top \n sau mid pe \n Home Page si \n da scroll-down
+u --> UC19:Se afla in bottom \n sau mid pe Home \n Page si da scroll-up
+
+
+'Profil Utilizator
+u --> UC1:Apasa pe butonul \n 1.Profil utilizator
+u --> UC2:Apasa butonul de editare profil
+u --> UC3:Apasa butonul afisare prieteni
+UC3 --> UC4
+u --> UC5:Apasa pe butonul de afisare grupuri
+UC5 --> UC6
+u --> UC7:Apasa pe butonul de setari ale aplicatiei
+u --> UC8:Apasa butonul de schimbare a parolei
+u --> UC9:Apasa pe butonul de schimbare a temei paginii
+u --> UC10:Alege tema light
+u --> UC11:Alege tema dark
+u --> UC12:Apasa butonul de stergere cont
+u --> UC13:Apasa butonul de confirmare a stergerii contului
+UC13 --> UC14
+
+@enduml
+'gandeste d.p.d.v al aplicatiei(gandeste cum fac ele in spate)
+'scriem si despre resursele web pe care le foloseste(de exemplu:foloseste imaginea din sursa x, ia info din x)
+'use case = descrie functionalitate
+'use case= caz de utilizare
+'gandeste te la actori, daca utilizatorul este cel care face toate actiunile
+'actorul este declansatorul
