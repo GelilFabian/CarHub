@@ -56,7 +56,10 @@ dropdown-list pentru alegerea marcii masinii, unul pentru model, unul pentru tip
 din dropdown-uri se vor extrage dintr-o baza de date. La apasarea fiecarui dropdown, se va afisa o lista aferenta fiecarui tip de informatie.
 La apasarea butonului de comparare masini, sub acest div se va afisa un alt div care afiseaza o poza pentru fiecare masina, sub poze se vor afisa brand-ul
 si marca masinilor, iar sub acestea se vor afisa informatiile legate de anul productiei, informatii legate de dimensiuni, informatii ale motoarelor, clasa
-masinilor si siguranta in caz de impact. De asemenea, va exista si o rubrica de review-uri lasate de proprietarii masinilor.
+masinilor si siguranta in caz de impact. De asemenea, va exista si o rubrica de review-uri lasate de proprietarii masinilor, reprezentat prin stelutele
+aferente rating-ului.
+La apasarea stelutelor de rating, se va deschide o pagina cu mai multe casute, fiecare casuta afisand numele utilizatorului, rating-ul pe care l-a acordat
+masinii si niste cuvinte.
 
 3)Forum:
 Facand click pe acest link, se va afisa o pagina care contine acelasi NavBar in partea stanga iar pe mijloc vor fi afisate mai multe cadrane cu diferite

@@ -38,43 +38,57 @@ package 1)Profil_Utilizator {
     usecase "Se va trimite un request \n catre baza de date pentru \n stergerea email-ului \n si parolei din evidenta" as UC14
 }
 
+package 2)Comparare_masini {
+    usecase "Se va afisa o pagina care \n contine acelasi NavBar in \n partea stanga iar pe mijloc va \n fi afisat un div impartit in 2 parti: \n prima parte pentru alegerea \n primei masini , a 2 a parte pentru \n alegerea masinii 2 si un \n buton de start comparare" as UC27
+    usecase "Se va afisa o lista \n aferenta fiecarui \n tip de informatie" as UC28
+    usecase "sub acest div se va afisa \n un alt div care afiseaza \n o poza pentru fiecare masina, \n sub poze se vor afisa brand-ul \n si marca masinilor, iar sub acestea \n se vor afisa informatiile legate de \n anul productiei, informatii legate \n de dimensiuni, informatii ale motoarelor, \n clasa masinilor si siguranta in caz de \n impact. De asemenea, va exista si o rubrica \n de review-uri lasate de proprietarii masinilor." as UC29
+    usecase "se va deschide o pagina cu \n mai multe casute, fiecare \n casuta afisand numele utilizatorului, \n rating-ul pe care l-a acordat \n masinii si niste cuvinte." as UC30
+}
+
 'Landing Page
-u --> UC20: Introduce linkul aplicatiei \n in browser si apasa enter
-u --> UC21: Apasa pe butonul \n 'Creare Cont'
-u --> UC22:Completeaza campurile pentru \ninregistrare si apasa 'Inregistrare'
-UC22 --> UC20
-u --> UC23:Completeaza campurile pentru \nautentificare si apasa 'Autentificare'
-u --> UC24:Bifeaza checkbox\n-ul 'Tine-ma minte'
-UC23 --> UC25:Daca datele \n sunt gresite
-UC23 --> UC15:Daca datele \nsunt corecte
-u -->UC26:Apasa butonul \n 'Reincearca'
+u -down--> UC20: Introduce linkul aplicatiei \n in browser si apasa enter
+u -down--> UC21: Apasa pe butonul \n 'Creare Cont'
+u -down--> UC22:Completeaza campurile pentru \ninregistrare si apasa 'Inregistrare'
+UC22 -down--> UC20
+u -down--> UC23:Completeaza campurile pentru \nautentificare si apasa 'Autentificare'
+u -down--> UC24:Bifeaza checkbox\n-ul 'Tine-ma minte'
+UC23 -down--> UC25:Daca datele \n sunt gresite
+UC23 -down--> UC15:Daca datele \nsunt corecte
+u -down-->UC26:Apasa butonul \n 'Reincearca'
 
 
 :Admin: --> (Se vor afisa in Home Page in partea de sus):Introduce noutati si \n stiri din domeniul auto in \n div-urile din mijlocul \n Home Page-ului
 
 
 'Home Page
-u --> UC16:Apasa pe \n butonul de NavBar
-u --> UC17:Apasa pe \n orice div din \n din Home Page.
-u --> UC18:Se afla in top \n sau mid pe \n Home Page si \n da scroll-down
-u --> UC19:Se afla in bottom \n sau mid pe Home \n Page si da scroll-up
+u -down-->UC16:Apasa pe \n butonul de NavBar
+u -down--> UC17:Apasa pe \n orice div din \n din Home Page.
+u -down--> UC18:Se afla in top \n sau mid pe \n Home Page si \n da scroll-down
+u -down--> UC19:Se afla in bottom \n sau mid pe Home \n Page si da scroll-up
 
 
 'Profil Utilizator
-u --> UC1:Apasa pe butonul \n 1.Profil utilizator
-u --> UC2:Apasa butonul de editare profil
-u --> UC3:Apasa butonul afisare prieteni
-UC3 --> UC4
-u --> UC5:Apasa pe butonul de afisare grupuri
-UC5 --> UC6
-u --> UC7:Apasa pe butonul de setari ale aplicatiei
-u --> UC8:Apasa butonul de schimbare a parolei
-u --> UC9:Apasa pe butonul de schimbare a temei paginii
-u --> UC10:Alege tema light
-u --> UC11:Alege tema dark
-u --> UC12:Apasa butonul de stergere cont
-u --> UC13:Apasa butonul de confirmare a stergerii contului
-UC13 --> UC14
+u -up--> UC1:Apasa pe butonul \n 1.Profil utilizator
+u -up--> UC2:Apasa butonul de editare profil
+u -up--> UC3:Apasa butonul afisare prieteni
+UC3 -up--> UC4
+u -up--> UC5:Apasa pe butonul de afisare grupuri
+UC5 -up--> UC6
+u -up--> UC7:Apasa pe butonul de setari ale aplicatiei
+u -up--> UC8:Apasa butonul de schimbare a parolei
+u -up--> UC9:Apasa pe butonul de schimbare a temei paginii
+u -up--> UC10:Alege tema light
+u -up--> UC11:Alege tema dark
+u -up--> UC12:Apasa butonul de stergere cont
+u -up--> UC13:Apasa butonul de confirmare a stergerii contului
+UC13 -up--> UC14
+
+
+'Comparare masini
+u -down--> UC27:Apasa pe butonul \n 2.Comparare masini
+u -down--> UC28:La apasarea \n fiecarui dropdown
+u -down--> UC29:La apasarea butonului \n de comparare masini
+u -down--> UC30:La apasarea ste-\nlutelor de rating
 
 @enduml
 'gandeste d.p.d.v al aplicatiei(gandeste cum fac ele in spate)
