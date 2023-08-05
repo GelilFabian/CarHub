@@ -11,8 +11,7 @@ Pentru functionarea butonului "Inregistrare", campurile trebuie completate cores
 Dupa ce utilizatorul va completa campurile si va apasa butonul "Inregistrare", email-ul si parola se vor salva in baza de date si se va afisa inapoi Landing Page.
 
 Pentru ca formularul sa tina minte email ul si parola utilizatorului(pentru a nu fi nevoit utilizatorul sa introduca email-ul si parola mereu),se vor
-completa campul email si campul parola si se va bifa
-checkbutton-ul "Tine-ma minte" inainte de apasarea butonului "Autentificare".
+completa campul email si campul parola si se va bifa checkbutton-ul "Tine-ma minte" inainte de apasarea butonului "Autentificare".
 
 Dupa ce utilizatorul va apasa pe butonul "Autentificare", se va trimite un request catre baza de date cu informatia din campurile respective pentru a vedea
 corectitudinea lor.
@@ -28,7 +27,7 @@ Daca utilizatorul se afla in partea de top sau mid a Home Page-ului si da scroll
 Daca utilizatorul se afla in partea de bottom sau mid a Home Page-ului si da scroll-up, se vor incarca stirile actuale.
 
 La apasarea butonului din stanga de pe Home Page, se va deschide, lent cu ajutorul animatiilor, NavBar-ul care va contine 3 butoane: 1)Profil Utilizator,
-2)Comparare, 3)Forumuri pentru discutii.
+2)Comparare, 3)Forumuri pentru discutii, 4)Scrie un review.
 
 1)Profil utilizator:
 Cand utilizatorul face click pe acest link, se va afisa o pagina care contine acelasi NavBar in partea stanga iar pe mijloc va fi afisata o sectiune unde
@@ -64,3 +63,10 @@ Facand click pe acest link, se va afisa o pagina care contine acelasi NavBar in 
 subiecte de discutie recente si un searchbar pentru a cauta subiecte in functie de cuvintele cheie scrise. Subiectele de discutie vor fi niste cadrane care
 afiseaza titlul subiectului si autorul postarii, iar aceste cadrane se vor afla una sub alta, pe latimea div-ului central.
 La accesarea unui subiect, se va deschide pagina dedicata acelei discutii, cu textul integral, data postarii si replicile oferite de ceilalti utilizatori.
+
+4)Lasa un review:
+Facand click pe acest link, se va afisa o pagina care contine acelasi NavBar in partea stanga iar pe mijloc se va afisa un dropdown-list pentru alegerea marcii
+masinii, unul pentru model, unul pentru tipul caroseriei si unul pentru motorizarea masinii. Aceste informatii sunt luate dintr-o baza de date. Dupa selectarea
+tuturor informatiilor, se vor afisa cele 5 stelute pentru ca utilizatorul sa aleaga cate stelute lasa la masina respectiva,deci sa lase un rating, si un text
+box pentru a lasa parerea lui completa, Pro and Cons. La finalul review-ului, cand utilizatorul va apasa pe butonul de "Trimite" , informatiile din tabele vor
+fi trimise catre pagina care afiseaza review urile.

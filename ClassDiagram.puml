@@ -1,7 +1,5 @@
 @startuml
 'https://plantuml.com/class-diagram
-class Utilizator {
-}
 class Landing_Page {
 }
 class formular_autentificare {
@@ -19,7 +17,8 @@ class buton_autentificare {
 class buton_am_uitat_parola {
 }
 
-Landing_Page o.. formular_autentificare
+
+Landing_Page *.. formular_autentificare
 formular_autentificare *.. email_textbox
 formular_autentificare *.. parola_textbox
 formular_autentificare *.. checkbutton
