@@ -66,6 +66,8 @@ Facand click pe acest link, se va afisa o pagina care contine acelasi NavBar in 
 subiecte de discutie recente si un searchbar pentru a cauta subiecte in functie de cuvintele cheie scrise. Subiectele de discutie vor fi niste cadrane care
 afiseaza titlul subiectului si autorul postarii, iar aceste cadrane se vor afla una sub alta, pe latimea div-ului central.
 La accesarea unui subiect, se va deschide pagina dedicata acelei discutii, cu textul integral, data postarii si replicile oferite de ceilalti utilizatori.
+La apasarea searchbar-ului, utilizatorului ii este permisa scrierea cuvintelor. Cand utilizatorul va apasa enter la searchbar, se va executa algoritmul de cautare pe
+baza cuvintelor si se vor afisa subiectele care au o potrivire de cuvinte.
 
 4)Lasa un review:
 Facand click pe acest link, se va afisa o pagina care contine acelasi NavBar in partea stanga iar pe mijloc se va afisa un dropdown-list pentru alegerea marcii

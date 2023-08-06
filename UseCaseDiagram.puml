@@ -45,6 +45,14 @@ package 2)Comparare_masini {
     usecase "se va deschide o pagina cu \n mai multe casute, fiecare \n casuta afisand numele utilizatorului, \n rating-ul pe care l-a acordat \n masinii si niste cuvinte." as UC30
 }
 
+package 3)Forum {
+    usecase "se va afisa o pagina care \n contine acelasi NavBar in partea \n stanga iar pe mijloc vor fi \n afisate mai multe cadrane cu \n diferite subiecte de discutie recente \n si un searchbar pentru a cauta subiecte \n in functie de cuvintele cheie scrise" as UC31
+    usecase "se va deschide pagina \n dedicata acelei discutii,\n cu textul integral, \n data postarii si replicile \n oferite de ceilalti utilizatori" as UC32
+    usecase "utilizatorului ii este \n permisa scrierea cuvintelor" as UC33
+    usecase "se va executa algoritmul \n de cautare pe baza cuvintelor" as UC34
+    usecase "se vor afisa subiectele care \n au o potrivire de cuvinte" as UC35
+}
+
 'Landing Page
 u -down--> UC20: Introduce linkul aplicatiei \n in browser si apasa enter
 u -down--> UC21: Apasa pe butonul \n 'Creare Cont'
@@ -89,6 +97,14 @@ u -down--> UC27:Apasa pe butonul \n 2.Comparare masini
 u -down--> UC28:La apasarea \n fiecarui dropdown
 u -down--> UC29:La apasarea butonului \n de comparare masini
 u -down--> UC30:La apasarea ste-\nlutelor de rating
+
+
+'Forum
+u -up--> UC31:Apasa pe \n butonul 3.Forum
+u -up--> UC32:La accesarea \n unui subiect
+u -up--> UC33:La apasarea \n searchbar-ului
+u -up--> UC34:Cand utilizatorul va \n apasa enter la searchbar
+UC34 -up-->UC35
 
 @enduml
 'gandeste d.p.d.v al aplicatiei(gandeste cum fac ele in spate)
