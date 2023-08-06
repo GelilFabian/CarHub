@@ -1,28 +1,88 @@
 @startuml
 'https://plantuml.com/class-diagram
-class Landing_Page {
+class landingPage{
 }
-class formular_autentificare {
+class formularAutentificare{
 }
-class email_textbox {
+class textboxEmail{
 }
-class parola_textbox {
+class textboxParola{
 }
-class checkbutton {
+class checkbuttonTineMinte{
 }
-class buton_creare_cont {
+class buttonCreareCont{
 }
-class buton_autentificare {
+class buttonAutentificare{
 }
-class buton_am_uitat_parola {
+class buttonUitatParola{
+}
+class contUtilizator{
+}
+class emailCont {
+}
+class parolaCont {
+}
+class formularInregistrare{
+}
+class textboxConfirmareParola {
+}
+class buttonInregistrare{
+}
+class bazaDateConturi{
+}
+class popup{
+}
+class butonReincearca{
+}
+class HomePage{
+}
+class buttonDeschideInchideNavbar {
+}
+class Navbar {
+}
+class divStire{
+}
+class pozaStire {
+}
+class descriereStire {
+}
+class paginaStire {
+}
+class infoStire {
+}
+class buttonProfilUtilizator {
+}
+class buttonComparare {
+}
+class buttonForum {
+}
+class buttonReview {
 }
 
-
-Landing_Page *.. formular_autentificare
-formular_autentificare *.. email_textbox
-formular_autentificare *.. parola_textbox
-formular_autentificare *.. checkbutton
-formular_autentificare *.. buton_creare_cont
-formular_autentificare *.. buton_autentificare
-formular_autentificare *.. buton_am_uitat_parola
+landingPage *.. formularAutentificare
+landingPage *.. buttonCreareCont
+formularAutentificare *.. textboxEmail
+formularAutentificare *.. textboxParola
+formularAutentificare *.. checkbuttonTineMinte
+formularAutentificare *.. buttonUitatParola
+formularAutentificare *.. buttonAutentificare
+buttonCreareCont *.. formularInregistrare
+formularInregistrare *.. textboxEmail
+formularInregistrare *.. textboxParola
+formularInregistrare *.. textboxConfirmareParola
+formularInregistrare *.. buttonInregistrare
+bazaDateConturi o.. contUtilizator
+contUtilizator *.. emailCont
+contUtilizator *.. parolaCont
+HomePage *.. buttonDeschideInchideNavbar
+buttonDeschideInchideNavbar *.. Navbar
+HomePage *.. divStire
+divStire *.. pozaStire
+divStire *.. descriereStire
+divStire *.. paginaStire
+paginaStire *.. infoStire
+Navbar *.. buttonProfilUtilizator
+Navbar *.. buttonComparare
+Navbar *.. buttonForum
+Navbar *.. buttonReview
 @enduml

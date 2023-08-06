@@ -8,7 +8,7 @@ buton de "Am uitat parola".
 Daca nu are cont, utilizatorul va apasa pe butonul "Creare Cont", care va deschide o alta pagina cu un formular de inscriere care contine un textbox
 pentru email(required), unul pentru parola(required), inca un textbox pentru confirmarea parolei(required) si un buton unde scrie "Inregistrare".
 Pentru functionarea butonului "Inregistrare", campurile trebuie completate corespunzator formatului lor.
-Dupa ce utilizatorul va completa campurile si va apasa butonul "Inregistrare", email-ul si parola se vor salva in baza de date si se va afisa inapoi Landing Page.
+Dupa ce utilizatorul va completa campurile si va apasa butonul "Inregistrare", email-ul si parola se vor salva in baza de date a conturilor si se va afisa inapoi Landing Page.
 
 Pentru ca formularul sa tina minte email ul si parola utilizatorului(pentru a nu fi nevoit utilizatorul sa introduca email-ul si parola mereu),se vor
 completa campul email si campul parola si se va bifa checkbutton-ul "Tine-ma minte" inainte de apasarea butonului "Autentificare".
@@ -20,14 +20,14 @@ Daca email sau parola sunt gresite sau daca nu se vor completa campurile,pagina 
 "Reincearca".
 Dupa apasarea butonului "Reincearca", fereastra pop up se va inchide si va permite utilizatorului sa editeze campurile text.
 Daca datele sunt corecte, se va afisa Home Page care contine in partea stanga un buton pentru deschiderea sau inchiderea NavBar-ului si in centru, Home Page
-va afisa cate un div care contine o poza si o scurta descriere a unei stiri din domeniul auto, iar la apasarea oricarui div, pagina va deschide o alta pagina care
+va afisa cate un div care contine o poza si o scurta descriere a unei stiri din domeniul auto, iar la apasarea oricarui div, se va deschide o alta pagina care
 contine toata informatia despre acea stire.
-Aceste noutati vor fi adaugate de un admin in sectiunea din mijlocul Home Page-ului.
+Aceste stiri vor fi adaugate de un admin in sectiunea din mijlocul Home Page-ului.
 Daca utilizatorul se afla in partea de top sau mid a Home Page-ului si da scroll-down, se vor incarca stirile mai vechi.
 Daca utilizatorul se afla in partea de bottom sau mid a Home Page-ului si da scroll-up, se vor incarca stirile actuale.
 
 La apasarea butonului din stanga de pe Home Page, se va deschide, lent cu ajutorul animatiilor, NavBar-ul care va contine 3 butoane: 1)Profil Utilizator,
-2)Comparare, 3)Forumuri pentru discutii, 4)Scrie un review.
+2)Comparare, 3)Forum, 4)Scrie un review.
 
 1)Profil utilizator:
 Cand utilizatorul face click pe acest link, se va afisa o pagina care contine acelasi NavBar in partea stanga iar pe mijloc va fi afisata o sectiune unde
