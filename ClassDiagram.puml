@@ -30,7 +30,7 @@ class buttonInregistrare{
 }
 class bazaDateConturi{
 }
-class popup{
+class popupEmailParolaGresite{
 }
 class butonReincearca{
 }
@@ -52,13 +52,38 @@ class infoStire {
 }
 class buttonProfilUtilizator {
 }
+class paginaProfilUtilizator {
+}
 class buttonComparare {
+}
+class paginaComparare {
 }
 class buttonForum {
 }
+class paginaForum {
+}
 class buttonReview {
 }
-
+class paginaReview {
+}
+class pozaProfilCont{
+}
+class numeCont {
+}
+class infoMasina {
+}
+class descriereCont {
+}
+class buttonEditareProfil {
+}
+class buttonAfisarePrieteni {
+}
+class buttonAfisareGrupuri {
+}
+class buttonSetariApp {
+}
+class sectiuneDetaliiCont {
+}
 landingPage *.. formularAutentificare
 landingPage *.. buttonCreareCont
 formularAutentificare *.. textboxEmail
@@ -66,23 +91,43 @@ formularAutentificare *.. textboxParola
 formularAutentificare *.. checkbuttonTineMinte
 formularAutentificare *.. buttonUitatParola
 formularAutentificare *.. buttonAutentificare
-buttonCreareCont *.. formularInregistrare
+buttonAutentificare o.. HomePage
+buttonAutentificare o...... bazaDateConturi
+buttonCreareCont o.. formularInregistrare
 formularInregistrare *.. textboxEmail
 formularInregistrare *.. textboxParola
 formularInregistrare *.. textboxConfirmareParola
-formularInregistrare *.. buttonInregistrare
+formularInregistrare *... buttonInregistrare
 bazaDateConturi o.. contUtilizator
 contUtilizator *.. emailCont
 contUtilizator *.. parolaCont
+contUtilizator *.. numeCont
+contUtilizator o.. infoMasina
+contUtilizator o.. descriereCont
+contUtilizator o.. pozaProfilCont
 HomePage *.. buttonDeschideInchideNavbar
-buttonDeschideInchideNavbar *.. Navbar
+buttonDeschideInchideNavbar o.. Navbar
 HomePage *.. divStire
 divStire *.. pozaStire
 divStire *.. descriereStire
-divStire *.. paginaStire
+divStire o.. paginaStire
 paginaStire *.. infoStire
 Navbar *.. buttonProfilUtilizator
 Navbar *.. buttonComparare
 Navbar *.. buttonForum
 Navbar *.. buttonReview
+buttonProfilUtilizator o.. paginaProfilUtilizator
+buttonComparare o.. paginaComparare
+buttonForum o.. paginaForum
+buttonReview o.. paginaReview
+paginaProfilUtilizator *.. sectiuneDetaliiCont
+paginaProfilUtilizator *..buttonEditareProfil
+paginaProfilUtilizator *.. buttonAfisareGrupuri
+paginaProfilUtilizator *.. buttonAfisarePrieteni
+paginaProfilUtilizator *.. buttonSetariApp
+sectiuneDetaliiCont *.. pozaProfilCont
+sectiuneDetaliiCont *.. numeCont
+sectiuneDetaliiCont *.. infoMasina
+sectiuneDetaliiCont *.. descriereCont
+
 @enduml

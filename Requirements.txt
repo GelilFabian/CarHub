@@ -30,9 +30,9 @@ La apasarea butonului din stanga de pe Home Page, se va deschide, lent cu ajutor
 2)Comparare, 3)Forum, 4)Scrie un review.
 
 1)Profil utilizator:
-Cand utilizatorul face click pe acest link, se va afisa o pagina care contine acelasi NavBar in partea stanga iar pe mijloc va fi afisata o sectiune unde
-se va afla poza de profil a utilizatorului impreuna cu numele acestuia langa ea, sub se vor afisa brand-ul masinii, modelul, anul fabricatiei, anul, motori-
-zarea, o mica descriere, buton pentru editare profil, buton pentru afisarea listei de prieteni, buton pentru afisarea grupurilor
+Cand utilizatorul face click pe acest link, se va afisa o pagina care contine acelasi NavBar in partea stanga iar pe mijloc va fi afisata sectiunea detalilor contului
+unde se va afla poza de profil a utilizatorului impreuna cu numele acestuia langa ea, sub se vor afisa informatiile masinii, cum ar fi: brand-ul masinii, modelul,
+anul fabricatiei, anul, motorizarea, o mica descriere, buton pentru editare profil, buton pentru afisarea listei de prieteni, buton pentru afisarea grupurilor
 din care fac parte si un buton pentru setarile aplicatiei.
 Cand utilizatorul va apasa butonul de editare profil, se va afisa sectiunea de editare a datelor si un buton de salvare a modificarilor facute.
 Cand utilizatrul va apasa butonul pentru afisarea listei de prieteni, pagina va face un request la baza de date pentru a alege utilizatorii care sunt asociati
