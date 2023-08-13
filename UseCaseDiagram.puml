@@ -65,7 +65,8 @@ UC23 -down--> UC15:Daca datele \nsunt corecte
 u -down-->UC26:Apasa butonul \n 'Reincearca'
 
 
-:Admin: --> (Se vor afisa in Home Page in partea de sus):Introduce noutati si \n stiri din domeniul auto in \n div-urile din mijlocul \n Home Page-ului
+:Admin: --> (Se vor afisa stirile in Home \n Page in partea de sus):Introduce noutati si \n stiri din domeniul auto in \n div-urile din mijlocul \n Home Page-ului
+:Admin: --> (Se vor afisa informatiile \n legate de masini in pagina \n de Comparare masini):Introduce informatiile \n masinilor in baza de date
 
 
 'Home Page

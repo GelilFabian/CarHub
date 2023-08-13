@@ -121,7 +121,7 @@ buttonComparare o.. paginaComparare
 buttonForum o.. paginaForum
 buttonReview o.. paginaReview
 paginaProfilUtilizator *.. sectiuneDetaliiCont
-paginaProfilUtilizator *..buttonEditareProfil
+paginaProfilUtilizator *.. buttonEditareProfil
 paginaProfilUtilizator *.. buttonAfisareGrupuri
 paginaProfilUtilizator *.. buttonAfisarePrieteni
 paginaProfilUtilizator *.. buttonSetariApp

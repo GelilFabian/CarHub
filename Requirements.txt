@@ -1,7 +1,7 @@
 Utilizatorul deschide browserul.
 Utilizatorul va introduce link-ul aplicatiei in bara de adrese a brwoser-ului si va apasa enter.
 
-Dupa ce utilizatorul apasa butonul "enter", se va afiseaza Landing Page pe care va fi un formular de autentificare, situat pe mijlocul paginii, care contine:
+Dupa ce utilizatorul apasa butonul "enter", se afiseaza Landing Page pe care va fi un formular de autentificare, situat pe mijlocul paginii, care contine:
 un textbox pentru email, un textbox pentru parola, un checkbutton pentru "Tine-ma minte", un buton de "Creare Cont" , un buton de "Autentificare" si un
 buton de "Am uitat parola".
 
@@ -12,6 +12,7 @@ Dupa ce utilizatorul va completa campurile si va apasa butonul "Inregistrare", e
 
 Pentru ca formularul sa tina minte email ul si parola utilizatorului(pentru a nu fi nevoit utilizatorul sa introduca email-ul si parola mereu),se vor
 completa campul email si campul parola si se va bifa checkbutton-ul "Tine-ma minte" inainte de apasarea butonului "Autentificare".
+Checkbutton-ul odata bifat, la introducerea linkului in bara de adrese, se va afisa direct Home Page.
 
 Dupa ce utilizatorul va apasa pe butonul "Autentificare", se va trimite un request catre baza de date cu informatia din campurile respective pentru a vedea
 corectitudinea lor.
@@ -19,13 +20,18 @@ corectitudinea lor.
 Daca email sau parola sunt gresite sau daca nu se vor completa campurile,pagina va afisa un pop up cu mesajul "Email sau parola gresite" si un buton de
 "Reincearca".
 Dupa apasarea butonului "Reincearca", fereastra pop up se va inchide si va permite utilizatorului sa editeze campurile text.
-Daca datele sunt corecte, se va afisa Home Page care contine in partea stanga un buton pentru deschiderea sau inchiderea NavBar-ului si in centru, Home Page
-va afisa cate un div care contine o poza si o scurta descriere a unei stiri din domeniul auto, iar la apasarea oricarui div, se va deschide o alta pagina care
-contine toata informatia despre acea stire.
+Daca datele sunt corecte, se va afisa Home Page care contine in partea stanga un buton pentru deschiderea sau inchiderea NavBar-ului, un searchbar sus pe pagina
+si in centru, Home Page va afisa cate un div care contine o poza si o scurta descriere a unei stiri din domeniul auto, iar la apasarea oricarui div, se va deschide
+o alta pagina care contine toata informatia despre acea stire.
 Aceste stiri vor fi adaugate de un admin in sectiunea din mijlocul Home Page-ului.
 Daca utilizatorul se afla in partea de top sau mid a Home Page-ului si da scroll-down, se vor incarca stirile mai vechi.
 Daca utilizatorul se afla in partea de bottom sau mid a Home Page-ului si da scroll-up, se vor incarca stirile actuale.
-
+La apasarea searchbar-ului, se va activa permisiunea pentru scriere. Searchbar ul se va folosi pentru ca utilizatorul sa caute alti utilizatori dupa nume, grupuri
+sau comunitati. Dupa ce utilizatorul a scris ce a vrut sa scrie, la apasarea "enter", se vor afisa rezultatele generate de cautare dupa caracterele introduse.
+Daca a vrut sa caute un alt utilizator si s-a generat o lista de persoane care se potrivesc filtrelor, utilizatorul va avea permisiunea de a ii trimite o cerere
+de prietenie sau sa vizualizeze profilul acestuia. Daca utilizatorul apasa pe butonul "vizualizare profil" , se va afisa o pagina asemanatoare cu pagina "Profil Utilizator"
+dar fara butoanele aditionale de editare setari sau editare profil. Daca utilizatorul apasa butonul "adaugare prieten" , se va trimite un request de asociere pe contul
+celuilalt utilizator si va primi o notificare ca a primit o cerere de prietenie.
 La apasarea butonului din stanga de pe Home Page, se va deschide, lent cu ajutorul animatiilor, NavBar-ul care va contine 3 butoane: 1)Profil Utilizator,
 2)Comparare, 3)Forum, 4)Scrie un review.
 
@@ -53,7 +59,7 @@ email-ului si parolei din evidenta.
 Cand utilizatorul face click pe acest link, se va afisa o pagina care contine acelasi NavBar in partea stanga iar pe mijloc va fi afisat un div impartit
 in 2 parti: prima parte pentru alegerea primei masini , a 2 a parte pentru alegerea masinii 2 si un buton de start comparare. Fiecare parte va afisa: un
 dropdown-list pentru alegerea marcii masinii, unul pentru model, unul pentru tipul caroseriei si unul pentru motorizarea masinii. Toate aceste informatii
-din dropdown-uri se vor extrage dintr-o baza de date. La apasarea fiecarui dropdown, se va afisa o lista aferenta fiecarui tip de informatie.
+din dropdown-uri se vor extrage dintr-o baza de date unde sunt introduse de admin. La apasarea fiecarui dropdown, se va afisa o lista aferenta fiecarui tip de informatie.
 La apasarea butonului de comparare masini, sub acest div se va afisa un alt div care afiseaza o poza pentru fiecare masina, sub poze se vor afisa brand-ul
 si marca masinilor, iar sub acestea se vor afisa informatiile legate de anul productiei, informatii legate de dimensiuni, informatii ale motoarelor, clasa
 masinilor si siguranta in caz de impact. De asemenea, va exista si o rubrica de review-uri lasate de proprietarii masinilor, reprezentat prin stelutele
