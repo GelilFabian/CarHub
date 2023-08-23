@@ -13,6 +13,10 @@ Dupa ce utilizatorul va completa campurile si va apasa butonul "Inregistrare", e
 Pentru ca formularul sa tina minte email ul si parola utilizatorului(pentru a nu fi nevoit utilizatorul sa introduca email-ul si parola mereu),se vor
 completa campul email si campul parola si se va bifa checkbutton-ul "Tine-ma minte" inainte de apasarea butonului "Autentificare".
 Checkbutton-ul odata bifat, la introducerea linkului in bara de adrese, se va afisa direct Home Page.
+Daca utilizatorul apasa pe butonul "Am uitat parola" , se va deschide o pagina cu un textbox pentru email-ul utilizatorului si un buton de "urmatorul".
+La completarea textbox-ului cu email-ul si apasarea butonului "urmatorul" , va aparea un alt textbox pentru noua parola si confirmarea parolei si un buton cu textul "schimba parola".
+La completarea acestor textbox-uri si apasarea butonului "schimba parola", se va trimite un request la baza de date de inlocuire a parolei vechi stocate cu cea noua si se va afisa
+popup-ul "parola schimbata cu succes" pentru 5 secunde si apoi va disparea, urmand ca pagina sa trimita utilizatorul inapoi pe landing page.
 
 Dupa ce utilizatorul va apasa pe butonul "Autentificare", se va trimite un request catre baza de date cu informatia din campurile respective pentru a vedea
 corectitudinea lor.
@@ -20,9 +24,8 @@ corectitudinea lor.
 Daca email sau parola sunt gresite sau daca nu se vor completa campurile,pagina va afisa un pop up cu mesajul "Email sau parola gresite" si un buton de
 "Reincearca".
 Dupa apasarea butonului "Reincearca", fereastra pop up se va inchide si va permite utilizatorului sa editeze campurile text.
-Daca datele sunt corecte, se va afisa Home Page care contine in partea stanga un buton pentru deschiderea sau inchiderea NavBar-ului, un searchbar sus pe pagina
-si in centru, Home Page va afisa cate un div care contine o poza si o scurta descriere a unei stiri din domeniul auto, iar la apasarea oricarui div, se va deschide
-o alta pagina care contine toata informatia despre acea stire.
+Daca datele sunt corecte, se va afisa Home Page care contine in partea stanga un NavBar, un searchbar sus pe pagina si in centru, Home Page va afisa cate un div care
+contine o poza si o scurta descriere a unei stiri din domeniul auto, iar la apasarea oricarui div, se va deschide o alta pagina care contine toata informatia despre acea stire.
 Aceste stiri vor fi adaugate de un admin in sectiunea din mijlocul Home Page-ului.
 Daca utilizatorul se afla in partea de top sau mid a Home Page-ului si da scroll-down, se vor incarca stirile mai vechi.
 Daca utilizatorul se afla in partea de bottom sau mid a Home Page-ului si da scroll-up, se vor incarca stirile actuale.

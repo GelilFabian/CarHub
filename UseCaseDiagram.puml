@@ -14,8 +14,7 @@ package LandingPage {
 }
 
 package HomePage {
-    usecase "Se afiseza Home Page care \n contine in partea stanga un \n buton pentru deschiderea sau \n inchiderea NavBar-ului si in centru \n se va afisa cate un div cu \n noutatile si stirile din domeniul auto" as UC15
-    usecase "Se deschide NavBar-ul care \n va contine 3 butoane: \n 1.Profil utilizator , 2.Comparare, \n 3.Forum, 4.Lasa un review" as UC16
+    usecase "Se afiseza Home Page care \n contine in partea stanga un \n NavBar si in centru se \n va afisa cate un div cu \n noutatile si stirile din domeniul auto" as UC15
     usecase "Pagina va deschide \nalta pagina care \ncontine toata informatia \n legata de acea stire" as UC17
     usecase "Se incarca stirile mai vechi, \ndandu-se scroll in jos la paina" as UC18
     usecase "Se incarca stirile actuale,\n dandu-se scroll in sus la pagina" as UC19
@@ -70,7 +69,6 @@ u -down-->UC26:Apasa butonul \n 'Reincearca'
 
 
 'Home Page
-u -down-->UC16:Apasa pe \n butonul de NavBar
 u -down--> UC17:Apasa pe \n orice div din \n din Home Page.
 u -down--> UC18:Se afla in top \n sau mid pe \n Home Page si \n da scroll-down
 u -down--> UC19:Se afla in bottom \n sau mid pe Home \n Page si da scroll-up

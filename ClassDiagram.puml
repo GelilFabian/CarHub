@@ -1,44 +1,93 @@
 @startuml
 'https://plantuml.com/class-diagram
 class landingPage{
+Culoare_fundal
+afiseaza_formular_autentificare()
 }
 class formularAutentificare{
+Inaltime
+Latime
+autentifica_cont()
 }
 class textboxEmail{
+Inaltime
+Latime
+Tip_caractere
 }
 class textboxParola{
+Inaltime
+Latime
+Tip_caractere
 }
 class checkbuttonTineMinte{
+Bifat
+Tine_minte_parola()
 }
 class buttonCreareCont{
+Inaltime
+Latime
+Culoare
+Text
+deschide_formular_inregistrare()
 }
 class buttonAutentificare{
+Inaltime
+Latime
+Culoare
+Text
+verifica_datele()
+deschide_Home_Page()
 }
 class buttonUitatParola{
+Inaltime
+Latime
+Culoare
+Text
+deschide_pagina_schimbare_parola()
 }
 class contUtilizator{
+Stare_cont
 }
 class emailCont {
+format_email
 }
 class parolaCont {
+Numar_caractere
 }
 class formularInregistrare{
+Inaltime
+Latime
 }
 class textboxConfirmareParola {
+Inaltime
+Latime
+Tip_caractere
 }
 class buttonInregistrare{
+Inaltime
+Latime
+Culoare
+Text
+creaza_contul()
 }
 class bazaDateConturi{
+stocheaza_conturile()
 }
 class popupEmailParolaGresite{
+text
+afisare_text()
 }
 class butonReincearca{
+Inaltime
+Latime
+Culoare
+Text
 }
 class HomePage{
 }
-class buttonDeschideInchideNavbar {
-}
 class Navbar {
+}
+class Searchbar{
 }
 class divStire{
 }
@@ -84,50 +133,58 @@ class buttonSetariApp {
 }
 class sectiuneDetaliiCont {
 }
-landingPage *.. formularAutentificare
-landingPage *.. buttonCreareCont
-formularAutentificare *.. textboxEmail
-formularAutentificare *.. textboxParola
-formularAutentificare *.. checkbuttonTineMinte
-formularAutentificare *.. buttonUitatParola
-formularAutentificare *.. buttonAutentificare
-buttonAutentificare o.. HomePage
-buttonAutentificare o...... bazaDateConturi
-buttonCreareCont o.. formularInregistrare
-formularInregistrare *.. textboxEmail
-formularInregistrare *.. textboxParola
-formularInregistrare *.. textboxConfirmareParola
-formularInregistrare *... buttonInregistrare
-bazaDateConturi o.. contUtilizator
-contUtilizator *.. emailCont
-contUtilizator *.. parolaCont
-contUtilizator *.. numeCont
-contUtilizator o.. infoMasina
-contUtilizator o.. descriereCont
-contUtilizator o.. pozaProfilCont
-HomePage *.. buttonDeschideInchideNavbar
-buttonDeschideInchideNavbar o.. Navbar
-HomePage *.. divStire
-divStire *.. pozaStire
-divStire *.. descriereStire
-divStire o.. paginaStire
-paginaStire *.. infoStire
-Navbar *.. buttonProfilUtilizator
-Navbar *.. buttonComparare
-Navbar *.. buttonForum
-Navbar *.. buttonReview
-buttonProfilUtilizator o.. paginaProfilUtilizator
-buttonComparare o.. paginaComparare
-buttonForum o.. paginaForum
-buttonReview o.. paginaReview
-paginaProfilUtilizator *.. sectiuneDetaliiCont
-paginaProfilUtilizator *.. buttonEditareProfil
-paginaProfilUtilizator *.. buttonAfisareGrupuri
-paginaProfilUtilizator *.. buttonAfisarePrieteni
-paginaProfilUtilizator *.. buttonSetariApp
-sectiuneDetaliiCont *.. pozaProfilCont
-sectiuneDetaliiCont *.. numeCont
-sectiuneDetaliiCont *.. infoMasina
-sectiuneDetaliiCont *.. descriereCont
+
+'fa proprietatile
+'fa functionalitatile
+'fa mai multe clase
+'clasele sunt la general, obiectele sunt personalizate
+'info Masina e are proprietati de content
+'pot folosi relatia de asociere cu puncte puncte
+
+landingPage "1" *-- "1" formularAutentificare
+formularAutentificare "1" *-- "1" buttonCreareCont
+formularAutentificare "1" *-- "1" textboxEmail
+formularAutentificare "1" *-- "1" textboxParola
+formularAutentificare "1" *-- "1" checkbuttonTineMinte
+formularAutentificare "1" *-- "1" buttonUitatParola
+formularAutentificare "1" *-- "1" buttonAutentificare
+buttonCreareCont "1" .. "1" formularInregistrare
+buttonAutentificare "1" .. "1" HomePage
+formularInregistrare "1" *-- "1" textboxEmail
+formularInregistrare "1" *-- "1" textboxParola
+formularInregistrare "1" *-- "1" textboxConfirmareParola
+formularInregistrare "1" *-- "1" buttonInregistrare
+bazaDateConturi "1" o-- "0..n" contUtilizator
+contUtilizator "1" *-- "1" emailCont
+contUtilizator "1" *-- "1" parolaCont
+contUtilizator "1" *-- "1" numeCont
+contUtilizator "1" *-- "0..1" infoMasina
+contUtilizator "1" *-- "0..1" descriereCont
+contUtilizator "1" *-- "0..1" pozaProfilCont
+popupEmailParolaGresite "1" *-- "1" butonReincearca
+HomePage "1" *-- "1" Navbar
+HomePage "1" *-- "1" divStire
+HomePage "1" *-- "1" Searchbar
+divStire "1" *-- "1" pozaStire
+divStire "1" *-- "1" descriereStire
+divStire "1" .. "1" paginaStire
+paginaStire "1" *-- "1" infoStire
+Navbar "1" *-- "1" buttonProfilUtilizator
+Navbar "1" *-- "1" buttonComparare
+Navbar "1" *-- "1" buttonForum
+Navbar "1" *-- "1" buttonReview
+buttonProfilUtilizator "1" .. "1" paginaProfilUtilizator
+buttonComparare "1" .. "1" paginaComparare
+buttonForum "1" .. "1" paginaForum
+buttonReview "1" .. "1" paginaReview
+paginaProfilUtilizator "1" *-- "1" sectiuneDetaliiCont
+paginaProfilUtilizator "1" *-- "1" buttonEditareProfil
+paginaProfilUtilizator "1" *-- "1" buttonAfisareGrupuri
+paginaProfilUtilizator "1" *-- "1" buttonAfisarePrieteni
+paginaProfilUtilizator "1" *-- "1" buttonSetariApp
+sectiuneDetaliiCont "1" *-- "0..1" pozaProfilCont
+sectiuneDetaliiCont "1" *-- "1" numeCont
+sectiuneDetaliiCont "1" *-- "0..1" infoMasina
+sectiuneDetaliiCont "1" *-- "0..1" descriereCont
 
 @enduml
