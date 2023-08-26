@@ -53,7 +53,7 @@ Cand utilizatrul va apasa butonul pentru afisarea grupurilor din care face parte
 care face parte utilizatorul si se vor afisa pe o pagina noua toate grupurile asociate cu contul utilizatorului.
 Cand utilizatorul va apasa butonul de setari ale aplcatiei, se va deschide o pagina care contine un buton schimbarea parolei,un buton pentru schimbarea
 temei paginii(light sau dark) si un buton pentru stergerea contului.
-Cand utilizatorul va apasa butonul de schimbare a parolei, se va afisa o pagina cu un textbox pentru a se introduce parola actuala, un textbox pentru
+Cand utilizatorul va apasa butonul de schimbare a parolei, se va afisa un textbox pentru a se introduce parola actuala, un textbox pentru
 a se introduce parola noua si un buton pentru a salva modificarile facute.
 Cand utilizatorul va apasa pe butonul de schimbare a temei paginii, se va afisa o pagina cu 3 variante de alegere: automat(prestabilit), light sau dark.
 La alegerea temei light, aplicatia va avea drept culoare principala alb, iar la alegerea temei dark, culoarea principala in aplicatie va fi un gri graphite.

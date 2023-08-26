@@ -75,13 +75,11 @@ memoreaza_descriereCont ()
 class emailCont {
 email
 nr_caractere
-memoreaza_email ()
 }
 
 class parolaCont {
 parola
 nr_caractere
-memoreaza_parola ()
 }
 
 class formularInregistrare{
@@ -229,13 +227,12 @@ class pozaProfilCont{
 Forma
 Latime
 Inaltime
-afiseaza_pozaProfil ()
 }
 
 class numeCont {
 nume
 font
-afiseaza_numeCont ()
+
 }
 
 class infoMasina {
@@ -243,13 +240,12 @@ brand_masina
 model_masina
 an_fabricatie
 motorizare
-afiseaza_infoMasina ()
 }
 
 class descriereCont {
 limita_caractere
 text
-afiseaza_caractere ()
+
 }
 
 class buttonEditareProfil {
@@ -288,9 +284,41 @@ deschide_paginaSetariApp ()
 }
 
 class paginaSetariApp {
+culoare_fundal
+afiseaza_butoane_SetariApp ()
 }
 
-class sectiuneDetaliiCont {
+class divDetaliiCont {
+Inaltime
+Latime
+afiseaza_infoMasina ()
+afiseaza_caractere ()
+afiseaza_pozaProfil ()
+afiseaza_numeCont ()
+}
+
+class buttonSchimbaParola {
+Inaltime
+Latime
+Text
+Culoare
+afiseaza_textboxSchimbareParola ()
+}
+
+class buttonSchimbaTemaPagina {
+Inaltime
+Latime
+Text
+Culoare
+schimba_tema_paginii()
+}
+
+class buttonnStergereCont {
+Inaltime
+Latime
+Text
+Culoare
+sterge_cont_baza_date()
 }
 
 'fa proprietatile
@@ -336,17 +364,20 @@ buttonProfilUtilizator "1" .. "1" paginaProfilUtilizator
 buttonComparare "1" .. "1" paginaComparare
 buttonForum "1" .. "1" paginaForum
 buttonReview "1" .. "1" paginaReview
-paginaProfilUtilizator "1" *-- "1" sectiuneDetaliiCont
+paginaProfilUtilizator "1" *-- "1" divDetaliiCont
 paginaProfilUtilizator "1" *-- "1" buttonEditareProfil
 paginaProfilUtilizator "1" *-- "1" buttonAfisareGrupuri
 paginaProfilUtilizator "1" *-- "1" buttonAfisarePrieteni
 paginaProfilUtilizator "1" *-- "1" buttonSetariApp
-sectiuneDetaliiCont "1" *-- "0..1" pozaProfilCont
-sectiuneDetaliiCont "1" *-- "1" numeCont
-sectiuneDetaliiCont "1" *-- "0..1" infoMasina
-sectiuneDetaliiCont "1" *-- "0..1" descriereCont
+divDetaliiCont "1" *-- "0..1" pozaProfilCont
+divDetaliiCont "1" *-- "1" numeCont
+divDetaliiCont "1" *-- "0..1" infoMasina
+divDetaliiCont "1" *-- "0..1" descriereCont
 buttonSetariApp "1".."1" paginaSetariApp
 buttonEditareProfil "1".."1" paginaEditareProfil
-buttonAfisarePrieteni .. paginaAfisarePrieteni
-buttonAfisareGrupuri .. paginaAfisareGrupuri
+buttonAfisarePrieteni "1".. "1" paginaAfisarePrieteni
+buttonAfisareGrupuri "1" .. "1" paginaAfisareGrupuri
+paginaSetariApp "1" *-- "1" buttonSchimbaParola
+paginaSetariApp "1" *-- "1" buttonSchimbaTemaPagina
+paginaSetariApp "1" *-- "1" buttonnStergereCont
 @enduml
