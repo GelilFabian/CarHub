@@ -2,34 +2,49 @@
 'https://plantuml.com/class-diagram
 class landingPage{
 Culoare_fundal
-afiseaza_formular_autentificare()
+Mesaj:"Welcome to CarHub!"
+afiseaza_divLandingPage()
 }
+
+class divLandingPage {
+Inaltime
+Latime
+Culoare_fundal:alb
+afiseaza_formularAutentificare ()
+afiseaza_formularInregistrare ()
+}
+
 class formularAutentificare{
 Inaltime
 Latime
+Mesaj:"Ai cont?Autentifica-te"
 autentifica_cont()
 }
+
 class textboxEmail{
 Inaltime
 Latime
-Tip_caractere
+Nr_maxim_caractere
+Name
+afiseaza_caractere()
+memoreaza_input ()
+limiteaza_caractere ()
 }
+
 class textboxParola{
 Inaltime
 Latime
-Tip_caractere
+Nr_maxim_caractere
+parola
+memoreaza_input ()
+limiteaza_caractere ()
 }
+
 class checkbuttonTineMinte{
-Bifat
+Stare
 Tine_minte_parola()
 }
-class buttonCreareCont{
-Inaltime
-Latime
-Culoare
-Text
-deschide_formular_inregistrare()
-}
+
 class buttonAutentificare{
 Inaltime
 Latime
@@ -38,6 +53,7 @@ Text
 verifica_datele()
 deschide_Home_Page()
 }
+
 class buttonUitatParola{
 Inaltime
 Latime
@@ -45,24 +61,44 @@ Culoare
 Text
 deschide_pagina_schimbare_parola()
 }
+
 class contUtilizator{
-Stare_cont
+capacitate_stocare
+memoreaza_pozaProfilCont ()
+memoreaza_numeCont ()
+memoreaza_emailCont ()
+memoreaza_parolaCont ()
+memoreaza_infoMasina ()
+memoreaza_descriereCont ()
 }
+
 class emailCont {
-format_email
+email
+nr_caractere
+memoreaza_email ()
 }
+
 class parolaCont {
-Numar_caractere
+parola
+nr_caractere
+memoreaza_parola ()
 }
+
 class formularInregistrare{
 Inaltime
 Latime
+Mesaj:"Nu ai cont?Creaza unul"
+trimite_date_cont_baza_date ()
 }
+
 class textboxConfirmareParola {
 Inaltime
 Latime
 Tip_caractere
+memoreaza_input ()
+limiteaza_caractere ()
 }
+
 class buttonInregistrare{
 Inaltime
 Latime
@@ -70,85 +106,209 @@ Culoare
 Text
 creaza_contul()
 }
+
 class bazaDateConturi{
+lista_conturi
 stocheaza_conturile()
 }
+
 class popupEmailParolaGresite{
-text
-afisare_text()
+mesaj
+afisare_mesaj()
 }
+
 class butonReincearca{
 Inaltime
 Latime
 Culoare
 Text
+inchide_popup()
 }
+
 class HomePage{
+culoare_fundal
+afiseaza_elemente_HomePage()
 }
+
 class Navbar {
+culoare_fundal
+Inaltime
+Latime
+afiseaza_butoane_Navbar ()
 }
+
 class Searchbar{
+Inaltime
+Latime
+Cauta_prieteni ()
+Cauta_grupuri ()
+Deschide_lista_prieteni ()
+Deschide_lista_grupuri ()
 }
+
 class divStire{
+Inaltime
+Latime
+Afiseaza_pozaStire ()
+Afiseaza_infoStire ()
+Deschide_paginaStire ()
 }
+
 class pozaStire {
+poza
+Inaltime
+Latime
+afiseaza_poza ()
 }
+
 class descriereStire {
+text
+numar_caractere
+afiseaza_text ()
 }
+
 class paginaStire {
+culoare_fundal
+info_stire
+afiseaza_info_stire()
 }
-class infoStire {
-}
+
 class buttonProfilUtilizator {
+Inaltime
+Latime
+text
+culoare
+deschide_paginaProfilutilizator ()
 }
+
 class paginaProfilUtilizator {
+culoare_fundal
+afiseaza_elemente_ProfilUtilizator ()
 }
+
 class buttonComparare {
+Inaltime
+Latime
+text
+culoare
+deschide_paginaComparare ()
 }
+
 class paginaComparare {
+culoare_fundal
+afiseaza_elemente_paginaComparare ()
 }
+
 class buttonForum {
+Inaltime
+Latime
+text
+culoare
+deschide_paginaForum ()
 }
+
 class paginaForum {
+culoare_fundal
+afiseaza_elemente_Forum ()
 }
+
 class buttonReview {
+Inaltime
+Latime
+text
+culoare
+deschide_paginaReview ()
 }
+
 class paginaReview {
+culoare_fundal
+afiseaza_elemente_paginaReview()
 }
+
 class pozaProfilCont{
+Forma
+Latime
+Inaltime
+afiseaza_pozaProfil ()
 }
+
 class numeCont {
+nume
+font
+afiseaza_numeCont ()
 }
+
 class infoMasina {
+brand_masina
+model_masina
+an_fabricatie
+motorizare
+afiseaza_infoMasina ()
 }
+
 class descriereCont {
+limita_caractere
+text
+afiseaza_caractere ()
 }
+
 class buttonEditareProfil {
+Inaltime
+Latime
+Text
+Culoare
+deschide_paginaEditareProfil ()
 }
+
+class paginaEditareProfil {
+}
+
 class buttonAfisarePrieteni {
+Inaltime
+Latime
+Text
+Culoare
+deschide_paginaAfisarePrieteni ()
 }
+
 class buttonAfisareGrupuri {
+Inaltime
+Latime
+Text
+Culoare
+deschide_paginaAfisareGrupuri ()
 }
+
 class buttonSetariApp {
+Inaltime
+Latime
+Text
+Culoare
+deschide_paginaSetariApp ()
 }
+
+class paginaSetariApp {
+}
+
 class sectiuneDetaliiCont {
 }
 
 'fa proprietatile
 'fa functionalitatile
 'fa mai multe clase
-'clasele sunt la general, obiectele sunt personalizate
+'clasele sunt la general, obiectele sunt proprietati valorizate
+'UCdiag ma ajuta sa stabilesc propr si funct in CDiag
 'info Masina e are proprietati de content
-'pot folosi relatia de asociere cu puncte puncte
+'mostenire- creez o clasa de baza si migrez chestii comune si trag relatia de la derivate la clasa de baza fara sa mai scriu in cele de baza chestiile comune
 
-landingPage "1" *-- "1" formularAutentificare
-formularAutentificare "1" *-- "1" buttonCreareCont
+landingPage "1" *-- "1" divLandingPage
+divLandingPage "1" *-- "1" formularAutentificare
+divLandingPage "1" *-- "1" formularInregistrare
 formularAutentificare "1" *-- "1" textboxEmail
 formularAutentificare "1" *-- "1" textboxParola
 formularAutentificare "1" *-- "1" checkbuttonTineMinte
 formularAutentificare "1" *-- "1" buttonUitatParola
 formularAutentificare "1" *-- "1" buttonAutentificare
-buttonCreareCont "1" .. "1" formularInregistrare
 buttonAutentificare "1" .. "1" HomePage
 formularInregistrare "1" *-- "1" textboxEmail
 formularInregistrare "1" *-- "1" textboxParola
@@ -168,7 +328,6 @@ HomePage "1" *-- "1" Searchbar
 divStire "1" *-- "1" pozaStire
 divStire "1" *-- "1" descriereStire
 divStire "1" .. "1" paginaStire
-paginaStire "1" *-- "1" infoStire
 Navbar "1" *-- "1" buttonProfilUtilizator
 Navbar "1" *-- "1" buttonComparare
 Navbar "1" *-- "1" buttonForum
@@ -186,5 +345,8 @@ sectiuneDetaliiCont "1" *-- "0..1" pozaProfilCont
 sectiuneDetaliiCont "1" *-- "1" numeCont
 sectiuneDetaliiCont "1" *-- "0..1" infoMasina
 sectiuneDetaliiCont "1" *-- "0..1" descriereCont
-
+buttonSetariApp "1".."1" paginaSetariApp
+buttonEditareProfil "1".."1" paginaEditareProfil
+buttonAfisarePrieteni .. paginaAfisarePrieteni
+buttonAfisareGrupuri .. paginaAfisareGrupuri
 @enduml

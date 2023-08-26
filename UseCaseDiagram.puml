@@ -4,20 +4,30 @@ left to right direction
 actor Utilizator as u
 
 package LandingPage {
-    usecase "Se afiseaza \n Landing Page \n pe care va fi \n un formular de \n autentificare" as UC20
-    usecase "Se va deschide \n o pagina cu un \n formular de inscriere" as UC21
+    usecase "Se va afisa Landing \n Page care va contine \n un mesaj "Welcome to CarHub!" \n si un div central impartit \n in 2, in partea stanga va fi \n formularul de autentificare iar in \n dreapta formularul de inregistrare" as UC20
+    usecase "Campul nu va mai lasa \n utilizatorul sa introduca alte caractere" as UC21
     usecase "Email-ul si parola se \n vor salva in baza de date" as UC22
     usecase "Se va trimite un request \n catre baza de date cu corectitudinea \n informatiei din campurile respective" as UC23
     usecase "Formularul va tine \nminte email si parola" as UC24
     usecase "Pagina va afisa un \n pop up cu mesajul \n"Email sau parola gresite" \n si un buton de "Reincearca"" as UC25
     usecase "Fereastra Pop-up \n se va inchide" as UC26
+    usecase "Se va trimite un \n email utilizatorului cum ca \n contul lui a fost creat" as UC36
+    usecase "Se incrementeaza numarul \n de caractere introduse si \n se compara cu numarul maxim \n de caractere limita" as UC37
+    usecase "Se va deschide o pagina cu \n un textbox pentru email-ul utilizatorului \n si un buton de "Urmatorul"" as UC38
+    usecase "Va aparea un alt textbox \n pentru noua parola si \n confirmarea parolei si un \n buton cu textul "Schimba parola"" as UC39
+    usecase "Se va trimite un request la \n baza de date de inlocuire a \n parolei vechi stocate cu cea noua" as UC40
+    usecase "Se va afisa popup-ul "Parola \n schimbata cu succes" pentru \n 5 secunde si apoi va disparea, \n urmand ca pagina sa trimita utilizatorul \n inapoi pe Landing Page" as UC41
 }
 
 package HomePage {
-    usecase "Se afiseza Home Page care \n contine in partea stanga un \n NavBar si in centru se \n va afisa cate un div cu \n noutatile si stirile din domeniul auto" as UC15
+    usecase "Se va afisa Home Page \n care contine in partea \n stanga un NavBar, un \n searchbar sus pe pagina si \n in centru, Home Page va afisa \n cate un div care contine o \n poza si o scurta descriere a \n unei stiri din domeniul auto" as UC15
     usecase "Pagina va deschide \nalta pagina care \ncontine toata informatia \n legata de acea stire" as UC17
     usecase "Se incarca stirile mai vechi, \ndandu-se scroll in jos la paina" as UC18
     usecase "Se incarca stirile actuale,\n dandu-se scroll in sus la pagina" as UC19
+    usecase "Se va activa permi-\nsiunea pentru scriere" as UC42
+    usecase "Se vor afisa rezultatele \n generate de cautare dupa \n caracterele introduse" as UC43
+    usecase "Se va afisa o pagina asemanatoare \n cu pagina "Profil Utilizator" dar fara butoanele \n aditionale de editare setari sau editare profil" as UC44
+    usecase "Se va trimite un request de asociere \n pe contul celuilalt utilizator si va primi \n o notificare ca a primit o cerere de prietenie" as UC45
 }
 
 package 1)Profil_Utilizator {
@@ -54,14 +64,20 @@ package 3)Forum {
 
 'Landing Page
 u -down--> UC20: Introduce linkul aplicatiei \n in browser si apasa enter
-u -down--> UC21: Apasa pe butonul \n 'Creare Cont'
 u -down--> UC22:Completeaza campurile pentru \ninregistrare si apasa 'Inregistrare'
-UC22 -down--> UC20
+u -down--> UC21:Introduce mai mult \n de 16 caractere in campuri.
+UC22 -down--> UC36
+UC36 -down-->UC20
 u -down--> UC23:Completeaza campurile pentru \nautentificare si apasa 'Autentificare'
 u -down--> UC24:Bifeaza checkbox\n-ul 'Tine-ma minte'
-UC23 -down--> UC25:Daca datele \n sunt gresite
-UC23 -down--> UC15:Daca datele \nsunt corecte
+UC23 -down--> UC25:Daca datele sunt gresite
+UC23 -down--> UC15:Daca datele sunt corecte
 u -down-->UC26:Apasa butonul \n 'Reincearca'
+u -down-->UC37:Introduce caractere \n in campurile textbox
+u -down-->UC38:Completeaza campurile \n si apasa butonul \n 'Am uitat parola'
+u -down-->UC39:Completeaza campurile \n si apasa butonul 'Urmatorul'
+u -down-->UC40:Completeaza campul si \n apasa butonul 'Schimba parola'
+UC40 -down-->UC41
 
 
 :Admin: --> (Se vor afisa stirile in Home \n Page in partea de sus):Introduce noutati si \n stiri din domeniul auto in \n div-urile din mijlocul \n Home Page-ului
@@ -69,9 +85,13 @@ u -down-->UC26:Apasa butonul \n 'Reincearca'
 
 
 'Home Page
-u -down--> UC17:Apasa pe \n orice div din \n din Home Page.
-u -down--> UC18:Se afla in top \n sau mid pe \n Home Page si \n da scroll-down
-u -down--> UC19:Se afla in bottom \n sau mid pe Home \n Page si da scroll-up
+u -down--> UC17:Apasa pe orice div din din Home Page.
+u -down--> UC18:Se afla in top sau mid pe Home Page si da scroll-down
+u -down--> UC19:Se afla in bottom sau mid pe Home Page si da scroll-up
+u -down--> UC42:Apasa pe searchbar
+u -down--> UC43:Dupa scrierea si apasarea 'enter'
+u -down--> UC44:Apasa pe butonul 'vizualizare profil'
+u -down--> UC45:Apasa butonul 'adaugare prieten'
 
 
 'Profil Utilizator
@@ -104,6 +124,7 @@ u -up--> UC32:La accesarea \n unui subiect
 u -up--> UC33:La apasarea \n searchbar-ului
 u -up--> UC34:Cand utilizatorul va \n apasa enter la searchbar
 UC34 -up-->UC35
+
 
 @enduml
 'gandeste d.p.d.v al aplicatiei(gandeste cum fac ele in spate)

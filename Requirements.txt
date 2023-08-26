@@ -1,31 +1,36 @@
 Utilizatorul deschide browserul.
 Utilizatorul va introduce link-ul aplicatiei in bara de adrese a brwoser-ului si va apasa enter.
 
-Dupa ce utilizatorul apasa butonul "enter", se afiseaza Landing Page pe care va fi un formular de autentificare, situat pe mijlocul paginii, care contine:
-un textbox pentru email, un textbox pentru parola, un checkbutton pentru "Tine-ma minte", un buton de "Creare Cont" , un buton de "Autentificare" si un
-buton de "Am uitat parola".
+Dupa ce utilizatorul apasa tasta "enter", se va afisa Landing Page care va contine un mesaj "Welcome to CarHub!" si un div central impartit in 2, in partea stanga va fi
+formularul de autentificare iar in dreapta formularul de inregistrare. Pe partea de formular de autentificare se va afisa deasupra formularului, dar in div, mesajul
+"Ai cont?Autentifica-te" iar pe partea de formular de inregistrare se va afisa deasupra formularului, dar in div, mesajul "Nu ai cont?Creaza unul".
+Formularul de autentificare contine un email_textbox , password_textbox, checkbutton cu textul "Tine-ma minte" , butonul "Autentificare" si un buton "Am uitat parola".
+Formularul de inregistrare contine email_textbox(required si limita de caractere de 16), password_textbox(required si limita de caractere 16), confirm_password_textbox
+(required si limita de caractere 16) si butonul "Inregistrare".La introducerea fiecarui caracter in aceste campuri, se va incrementa numarul de caractere introduse. Daca numarul
+caracterelor introduse ajunge la numarul limitei de caractere, campul nu va mai lasa utilizatorul sa introduca alte caractere. De asemenea daca utilizatorul incearca sa apese
+pe butonul de inregistrare sau autentificare fara sa introduca datele in campuri, se va afisa un pop-up din campul respectiv cu mesajul "Required"
 
-Daca nu are cont, utilizatorul va apasa pe butonul "Creare Cont", care va deschide o alta pagina cu un formular de inscriere care contine un textbox
-pentru email(required), unul pentru parola(required), inca un textbox pentru confirmarea parolei(required) si un buton unde scrie "Inregistrare".
-Pentru functionarea butonului "Inregistrare", campurile trebuie completate corespunzator formatului lor.
-Dupa ce utilizatorul va completa campurile si va apasa butonul "Inregistrare", email-ul si parola se vor salva in baza de date a conturilor si se va afisa inapoi Landing Page.
+Daca utilizatorul nu are cont creat, utilizatorul va completa campurile din formularul de inregistrare si va apasa butonul de "Inregistrare". Dupa apasarea butonului "Inregistrare",
+se va trimite un email utilizatorului cum ca contul lui a fost creat, email-ul si parola se vor salva in baza de date a conturilor si se va afisa Landing Page-ul pentru completarea
+campurilor din cadrul formularului de autentificare.
 
-Pentru ca formularul sa tina minte email ul si parola utilizatorului(pentru a nu fi nevoit utilizatorul sa introduca email-ul si parola mereu),se vor
+Pentru ca formularul sa tina minte email ul si parola utilizatorului(pentru a nu fi nevoit utilizatorul sa introduca email-ul si parola la fiecare accesare a site-ului),se vor
 completa campul email si campul parola si se va bifa checkbutton-ul "Tine-ma minte" inainte de apasarea butonului "Autentificare".
-Checkbutton-ul odata bifat, la introducerea linkului in bara de adrese, se va afisa direct Home Page.
-Daca utilizatorul apasa pe butonul "Am uitat parola" , se va deschide o pagina cu un textbox pentru email-ul utilizatorului si un buton de "urmatorul".
-La completarea textbox-ului cu email-ul si apasarea butonului "urmatorul" , va aparea un alt textbox pentru noua parola si confirmarea parolei si un buton cu textul "schimba parola".
-La completarea acestor textbox-uri si apasarea butonului "schimba parola", se va trimite un request la baza de date de inlocuire a parolei vechi stocate cu cea noua si se va afisa
-popup-ul "parola schimbata cu succes" pentru 5 secunde si apoi va disparea, urmand ca pagina sa trimita utilizatorul inapoi pe landing page.
+Checkbutton-ul odata bifat, la accesarea site-ului, se va afisa direct Home Page.
+Daca utilizatorul apasa pe butonul "Am uitat parola" , se va deschide o pagina cu un textbox pentru email-ul utilizatorului si un buton de "Urmatorul".
+La completarea textbox-ului cu email-ul si apasarea butonului "Urmatorul" , va aparea un alt textbox pentru noua parola si confirmarea parolei si un buton cu textul "Schimba parola".
+La completarea acestor textbox-uri si apasarea butonului "Schimba parola", se va trimite un request la baza de date de inlocuire a parolei vechi stocate cu cea noua si se va afisa
+popup-ul "Parola schimbata cu succes" pentru 5 secunde si apoi va disparea, urmand ca pagina sa trimita utilizatorul inapoi pe Landing Page.
 
 Dupa ce utilizatorul va apasa pe butonul "Autentificare", se va trimite un request catre baza de date cu informatia din campurile respective pentru a vedea
 corectitudinea lor.
-
 Daca email sau parola sunt gresite sau daca nu se vor completa campurile,pagina va afisa un pop up cu mesajul "Email sau parola gresite" si un buton de
 "Reincearca".
+
 Dupa apasarea butonului "Reincearca", fereastra pop up se va inchide si va permite utilizatorului sa editeze campurile text.
 Daca datele sunt corecte, se va afisa Home Page care contine in partea stanga un NavBar, un searchbar sus pe pagina si in centru, Home Page va afisa cate un div care
 contine o poza si o scurta descriere a unei stiri din domeniul auto, iar la apasarea oricarui div, se va deschide o alta pagina care contine toata informatia despre acea stire.
+Navbar-ul contine 4 butoane: 1)Profil Utilizator, 2)Comparare, 3)Forum, 4)Scrie un review.
 Aceste stiri vor fi adaugate de un admin in sectiunea din mijlocul Home Page-ului.
 Daca utilizatorul se afla in partea de top sau mid a Home Page-ului si da scroll-down, se vor incarca stirile mai vechi.
 Daca utilizatorul se afla in partea de bottom sau mid a Home Page-ului si da scroll-up, se vor incarca stirile actuale.
@@ -35,14 +40,12 @@ Daca a vrut sa caute un alt utilizator si s-a generat o lista de persoane care s
 de prietenie sau sa vizualizeze profilul acestuia. Daca utilizatorul apasa pe butonul "vizualizare profil" , se va afisa o pagina asemanatoare cu pagina "Profil Utilizator"
 dar fara butoanele aditionale de editare setari sau editare profil. Daca utilizatorul apasa butonul "adaugare prieten" , se va trimite un request de asociere pe contul
 celuilalt utilizator si va primi o notificare ca a primit o cerere de prietenie.
-La apasarea butonului din stanga de pe Home Page, se va deschide, lent cu ajutorul animatiilor, NavBar-ul care va contine 3 butoane: 1)Profil Utilizator,
-2)Comparare, 3)Forum, 4)Scrie un review.
 
 1)Profil utilizator:
 Cand utilizatorul face click pe acest link, se va afisa o pagina care contine acelasi NavBar in partea stanga iar pe mijloc va fi afisata sectiunea detalilor contului
 unde se va afla poza de profil a utilizatorului impreuna cu numele acestuia langa ea, sub se vor afisa informatiile masinii, cum ar fi: brand-ul masinii, modelul,
-anul fabricatiei, anul, motorizarea, o mica descriere, buton pentru editare profil, buton pentru afisarea listei de prieteni, buton pentru afisarea grupurilor
-din care fac parte si un buton pentru setarile aplicatiei.
+anul fabricatiei, motorizarea, o mica descriere, buton pentru editare profil, buton pentru afisarea listei de prieteni, buton pentru afisarea grupurilordin care fac
+parte si un buton pentru setarile aplicatiei.
 Cand utilizatorul va apasa butonul de editare profil, se va afisa sectiunea de editare a datelor si un buton de salvare a modificarilor facute.
 Cand utilizatrul va apasa butonul pentru afisarea listei de prieteni, pagina va face un request la baza de date pentru a alege utilizatorii care sunt asociati
 cu contul utilizatorului si se va afisa pe o pagina noua o lista cu acestia in ordine alfabetica.
