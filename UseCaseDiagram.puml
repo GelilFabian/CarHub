@@ -17,28 +17,21 @@ package LandingPage {
     usecase "Va aparea un alt textbox \n pentru noua parola si \n confirmarea parolei si un \n buton cu textul "Schimba parola"" as UC39
     usecase "Se va trimite un request la \n baza de date de inlocuire a \n parolei vechi stocate cu cea noua" as UC40
     usecase "Se va afisa popup-ul "Parola \n schimbata cu succes" pentru \n 5 secunde si apoi va disparea, \n urmand ca pagina sa trimita utilizatorul \n inapoi pe Landing Page" as UC41
+    usecase "Se va verifica email-ul pentru duplicate" as UC46
+    usecase "Se va afisa mesaul \n"Email existent"" as UC47
 }
 
 package HomePage {
-    usecase "Se va afisa Home Page \n care contine in partea \n stanga un NavBar, un \n searchbar sus pe pagina si \n in centru, Home Page va afisa \n cate un div care contine o \n poza si o scurta descriere a \n unei stiri din domeniul auto" as UC15
+    usecase "Se va afisa Home Page \n care contine in partea \n stanga un NavBar si \n in centru, Home Page va afisa \n cate un div care contine o \n poza si o scurta descriere a \n unei stiri din domeniul auto" as UC15
     usecase "Pagina va deschide \nalta pagina care \ncontine toata informatia \n legata de acea stire" as UC17
     usecase "Se incarca stirile mai vechi, \ndandu-se scroll in jos la paina" as UC18
     usecase "Se incarca stirile actuale,\n dandu-se scroll in sus la pagina" as UC19
-    usecase "Se va activa permi-\nsiunea pentru scriere" as UC42
-    usecase "Se vor afisa rezultatele \n generate de cautare dupa \n caracterele introduse" as UC43
-    usecase "Se va afisa o pagina asemanatoare \n cu pagina "Profil Utilizator" dar fara butoanele \n aditionale de editare setari sau editare profil" as UC44
-    usecase "Se va trimite un request de asociere \n pe contul celuilalt utilizator si va primi \n o notificare ca a primit o cerere de prietenie" as UC45
 }
 
 package 1)Profil_Utilizator {
     usecase "Se afiseaza pagina destinata profilului de \n utilizator care contine poza de profil, numele, \n descriere, detalii despre masina, un buton de \n editare date, un buton de afisare prieteni, buton \n de afisare grupuri si un buton destinat setarilor aplicatiei" as UC1
     usecase "Se va afisa sectiunea de \n editare a datelor si un buton \n de salvare a modificarilor" as UC2
-    usecase "Se va trimite un request \n catre baza de date pentru a \n alege utilizatorii care sunt \n asociati cu contul utilizatorului" as UC3
-    usecase "Se va afisa pe o pagina \n noua o lista cu acestia \n in ordine alfabetica" as UC4
-    usecase "Se va trimite un request \n catre baza de date pentru a \n alege grupurile din care face parte" as UC5
-    usecase "Se vor afisa pe o pagina \n noua toate grupurile asociate \n cu contul utilizatorului" as UC6
     usecase "Se va deschide o pagina \n care contine un buton pentru\n schimbarea parolei,un buton \n pentru schimbarea temei paginii si  \n un buton pentru stergerea cotului." as UC7
-    usecase "Se va afisa o pagina cu un \n textbox pentru a se introduce \n parola actuala, un textbox pentru \n a se introduce parola noua si un \n buton pentru a salva modificarile facute" as UC8
     usecase "Se va afisa o pagina cu 3 variante \n de alegere: automat, light sau dark" as UC9
     usecase "Aplicatia va avea drept \n culoare principala alb" as UC10
     usecase "Aplicatia va avea drept \n culoare principala gri graphite" as UC11
@@ -51,7 +44,7 @@ package 2)Comparare_masini {
     usecase "Se va afisa o pagina care \n contine acelasi NavBar in \n partea stanga iar pe mijloc va \n fi afisat un div impartit in 2 parti: \n prima parte pentru alegerea \n primei masini , a 2 a parte pentru \n alegerea masinii 2 si un \n buton de start comparare" as UC27
     usecase "Se va afisa o lista \n aferenta fiecarui \n tip de informatie" as UC28
     usecase "sub acest div se va afisa \n un alt div care afiseaza \n o poza pentru fiecare masina, \n sub poze se vor afisa brand-ul \n si marca masinilor, iar sub acestea \n se vor afisa informatiile legate de \n anul productiei, informatii legate \n de dimensiuni, informatii ale motoarelor, \n clasa masinilor si siguranta in caz de \n impact. De asemenea, va exista si o rubrica \n de review-uri lasate de proprietarii masinilor." as UC29
-    usecase "se va deschide o pagina cu \n mai multe casute, fiecare \n casuta afisand numele utilizatorului, \n rating-ul pe care l-a acordat \n masinii si niste cuvinte." as UC30
+    usecase "se va deschide o pagina cu \n mai multe casute, fiecare \n casuta afisand numele utilizatorului, \n rating-ul pe care l-a acordat \n si o parere personala" as UC30
 }
 
 package 3)Forum {
@@ -63,14 +56,16 @@ package 3)Forum {
 }
 
 'Landing Page
-u -down--> UC20: Introduce linkul aplicatiei \n in browser si apasa enter
-u -down--> UC22:Completeaza campurile pentru \ninregistrare si apasa 'Inregistrare'
-u -down--> UC21:Introduce mai mult \n de 16 caractere in campuri.
-UC22 -down--> UC36
-UC36 -down-->UC20
-u -down--> UC23:Completeaza campurile pentru \nautentificare si apasa 'Autentificare'
-u -down--> UC24:Bifeaza checkbox\n-ul 'Tine-ma minte'
-UC23 -down--> UC25:Daca datele sunt gresite
+u -down-> UC20: Introduce linkul aplicatiei \n in browser si apasa enter
+u -down-> UC46:Completeaza campurile pentru \ninregistrare si apasa 'Inregistrare'
+UC46 -down-> UC47:Daca email este duplicat
+UC46 -down-> UC22:Daca email nu este duplicat
+u -down-> UC21:Introduce mai mult \n de 16 caractere in campuri.
+UC22 -down-> UC36
+UC36 -down->UC20
+u -down-> UC23:Completeaza campurile pentru \nautentificare si apasa 'Autentificare'
+u -down-> UC24:Bifeaza checkbox\n-ul 'Tine-ma minte'
+UC23 -down-> UC25:Daca datele sunt gresite
 UC23 -down--> UC15:Daca datele sunt corecte
 u -down-->UC26:Apasa butonul \n 'Reincearca'
 u -down-->UC37:Introduce caractere \n in campurile textbox
@@ -88,27 +83,18 @@ UC40 -down-->UC41
 u -down--> UC17:Apasa pe orice div din din Home Page.
 u -down--> UC18:Se afla in top sau mid pe Home Page si da scroll-down
 u -down--> UC19:Se afla in bottom sau mid pe Home Page si da scroll-up
-u -down--> UC42:Apasa pe searchbar
-u -down--> UC43:Dupa scrierea si apasarea 'enter'
-u -down--> UC44:Apasa pe butonul 'vizualizare profil'
-u -down--> UC45:Apasa butonul 'adaugare prieten'
 
 
 'Profil Utilizator
-u -up--> UC1:Apasa pe butonul \n 1.Profil utilizator
-u -up--> UC2:Apasa butonul de editare profil
-u -up--> UC3:Apasa butonul afisare prieteni
-UC3 -up--> UC4
-u -up--> UC5:Apasa pe butonul de afisare grupuri
-UC5 -up--> UC6
-u -up--> UC7:Apasa pe butonul de setari ale aplicatiei
-u -up--> UC8:Apasa butonul de schimbare a parolei
-u -up--> UC9:Apasa pe butonul de schimbare a temei paginii
-u -up--> UC10:Alege tema light
-u -up--> UC11:Alege tema dark
-u -up--> UC12:Apasa butonul de stergere cont
-u -up--> UC13:Apasa butonul de confirmare a stergerii contului
-UC13 -up--> UC14
+u -up-> UC1:Apasa pe butonul \n 1.Profil utilizator
+u -up-> UC2:Apasa butonul de editare profil
+u -up-> UC7:Apasa pe butonul de setari ale aplicatiei
+u -up-> UC9:Apasa pe butonul de schimbare a temei paginii
+u -up-> UC10:Alege tema light
+u -up-> UC11:Alege tema dark
+u -up-> UC12:Apasa butonul de stergere cont
+u -up-> UC14:Apasa butonul de confirmare a stergerii contului
+UC14 -up-> UC13
 
 
 'Comparare masini
@@ -119,11 +105,11 @@ u -down--> UC30:La apasarea ste-\nlutelor de rating
 
 
 'Forum
-u -up--> UC31:Apasa pe \n butonul 3.Forum
-u -up--> UC32:La accesarea \n unui subiect
-u -up--> UC33:La apasarea \n searchbar-ului
-u -up--> UC34:Cand utilizatorul va \n apasa enter la searchbar
-UC34 -up-->UC35
+u -up-> UC31:Apasa pe \n butonul 3.Forum
+u -up-> UC32:La accesarea \n unui subiect
+u -up-> UC33:La apasarea \n searchbar-ului
+u -up-> UC34:Cand utilizatorul va \n apasa enter la searchbar
+UC34 -up->UC35
 
 
 @enduml

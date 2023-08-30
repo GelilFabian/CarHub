@@ -63,23 +63,20 @@ deschide_pagina_schimbare_parola()
 }
 
 class contUtilizator{
-capacitate_stocare
-memoreaza_pozaProfilCont ()
-memoreaza_numeCont ()
-memoreaza_emailCont ()
-memoreaza_parolaCont ()
-memoreaza_infoMasina ()
-memoreaza_descriereCont ()
+inregistreaza_cont ()
+verifica_email_duplicat ()
 }
 
 class emailCont {
 email
 nr_caractere
+memoreaza_emailCont ()
 }
 
 class parolaCont {
 parola
 nr_caractere
+memoreaza_parolaCont ()
 }
 
 class formularInregistrare{
@@ -138,10 +135,11 @@ afiseaza_butoane_Navbar ()
 class Searchbar{
 Inaltime
 Latime
-Cauta_prieteni ()
-Cauta_grupuri ()
-Deschide_lista_prieteni ()
-Deschide_lista_grupuri ()
+Input_text
+Memoreaza_input_text ()
+Cauta_input_text ()
+Face_request_DB ()
+Afiseaza_lista_cautari ()
 }
 
 class divStire{
@@ -227,12 +225,13 @@ class pozaProfilCont{
 Forma
 Latime
 Inaltime
+memoreaza_pozaProfilCont ()
 }
 
 class numeCont {
 nume
 font
-
+memoreaza_numeCont ()
 }
 
 class infoMasina {
@@ -240,12 +239,13 @@ brand_masina
 model_masina
 an_fabricatie
 motorizare
+memoreaza_infoMasina ()
 }
 
 class descriereCont {
 limita_caractere
 text
-
+memoreaza_descriereCont ()
 }
 
 class buttonEditareProfil {
@@ -253,26 +253,7 @@ Inaltime
 Latime
 Text
 Culoare
-deschide_paginaEditareProfil ()
-}
-
-class paginaEditareProfil {
-}
-
-class buttonAfisarePrieteni {
-Inaltime
-Latime
-Text
-Culoare
-deschide_paginaAfisarePrieteni ()
-}
-
-class buttonAfisareGrupuri {
-Inaltime
-Latime
-Text
-Culoare
-deschide_paginaAfisareGrupuri ()
+permite_editare_campuri ()
 }
 
 class buttonSetariApp {
@@ -297,14 +278,6 @@ afiseaza_pozaProfil ()
 afiseaza_numeCont ()
 }
 
-class buttonSchimbaParola {
-Inaltime
-Latime
-Text
-Culoare
-afiseaza_textboxSchimbareParola ()
-}
-
 class buttonSchimbaTemaPagina {
 Inaltime
 Latime
@@ -321,12 +294,64 @@ Culoare
 sterge_cont_baza_date()
 }
 
-'fa proprietatile
-'fa functionalitatile
-'fa mai multe clase
+class divPaginaComparare {
+Inaltime
+Latime
+Culoare_fundal
+Afiseaza_tabelMasinaA ()
+Afiseaza_tabelMasinaB ()
+}
+
+class tabelMasinaA {
+Inaltime
+Latime
+text:Masina A
+Afiseaza_dropdownuri ()
+}
+
+class tabelMasinaB {
+Inaltime
+Latime
+text:Masina B
+Afiseaza_dropdownuri ()
+}
+
+class buttonStartComparare {
+Inaltime
+Latime
+Text
+Culoare
+deschide_paginaAfisareComparare ()
+}
+
+class dropdownMarcaMasina {
+listaMarciMasini
+AfiseazaListaMarciMasini()
+MemoreazaOptiuneaSelectata()
+}
+
+class dropdownModelMasina {
+listaModeleMasini
+AfiseazaListaModeleMasini ()
+MemoreazaOptiuneaSelectata ()
+}
+
+class dropdownTipCaroserieMasina {
+listaTipCaroseriiMasini
+AfiseazaListaTipCaroseriiMasini ()
+MemoreazaOptiuneaSelectata()
+}
+
+class dropdownMotorizareMasina {
+listaMotorizariMasini
+AfiseazaListaMotorizariMasini()
+MemoreazaOptiuneaSelectata()
+}
+
+class paginaAfisareComparare {
+}
 'clasele sunt la general, obiectele sunt proprietati valorizate
 'UCdiag ma ajuta sa stabilesc propr si funct in CDiag
-'info Masina e are proprietati de content
 'mostenire- creez o clasa de baza si migrez chestii comune si trag relatia de la derivate la clasa de baza fara sa mai scriu in cele de baza chestiile comune
 
 landingPage "1" *-- "1" divLandingPage
@@ -337,7 +362,7 @@ formularAutentificare "1" *-- "1" textboxParola
 formularAutentificare "1" *-- "1" checkbuttonTineMinte
 formularAutentificare "1" *-- "1" buttonUitatParola
 formularAutentificare "1" *-- "1" buttonAutentificare
-buttonAutentificare "1" .. "1" HomePage
+buttonAutentificare "1" .. "1" HomePage:click
 formularInregistrare "1" *-- "1" textboxEmail
 formularInregistrare "1" *-- "1" textboxParola
 formularInregistrare "1" *-- "1" textboxConfirmareParola
@@ -346,38 +371,44 @@ bazaDateConturi "1" o-- "0..n" contUtilizator
 contUtilizator "1" *-- "1" emailCont
 contUtilizator "1" *-- "1" parolaCont
 contUtilizator "1" *-- "1" numeCont
-contUtilizator "1" *-- "0..1" infoMasina
+contUtilizator "1" *-- "0..n" infoMasina
 contUtilizator "1" *-- "0..1" descriereCont
 contUtilizator "1" *-- "0..1" pozaProfilCont
 popupEmailParolaGresite "1" *-- "1" butonReincearca
 HomePage "1" *-- "1" Navbar
 HomePage "1" *-- "1" divStire
-HomePage "1" *-- "1" Searchbar
 divStire "1" *-- "1" pozaStire
 divStire "1" *-- "1" descriereStire
-divStire "1" .. "1" paginaStire
+divStire "1" .. "1" paginaStire:click
 Navbar "1" *-- "1" buttonProfilUtilizator
 Navbar "1" *-- "1" buttonComparare
 Navbar "1" *-- "1" buttonForum
 Navbar "1" *-- "1" buttonReview
-buttonProfilUtilizator "1" .. "1" paginaProfilUtilizator
-buttonComparare "1" .. "1" paginaComparare
-buttonForum "1" .. "1" paginaForum
-buttonReview "1" .. "1" paginaReview
+buttonProfilUtilizator "1" .. "1" paginaProfilUtilizator:click
+buttonComparare "1" .. "1" paginaComparare:click
+buttonForum "1" .. "1" paginaForum:click
+buttonReview "1" .. "1" paginaReview:click
 paginaProfilUtilizator "1" *-- "1" divDetaliiCont
 paginaProfilUtilizator "1" *-- "1" buttonEditareProfil
-paginaProfilUtilizator "1" *-- "1" buttonAfisareGrupuri
-paginaProfilUtilizator "1" *-- "1" buttonAfisarePrieteni
 paginaProfilUtilizator "1" *-- "1" buttonSetariApp
 divDetaliiCont "1" *-- "0..1" pozaProfilCont
 divDetaliiCont "1" *-- "1" numeCont
 divDetaliiCont "1" *-- "0..1" infoMasina
 divDetaliiCont "1" *-- "0..1" descriereCont
-buttonSetariApp "1".."1" paginaSetariApp
-buttonEditareProfil "1".."1" paginaEditareProfil
-buttonAfisarePrieteni "1".. "1" paginaAfisarePrieteni
-buttonAfisareGrupuri "1" .. "1" paginaAfisareGrupuri
-paginaSetariApp "1" *-- "1" buttonSchimbaParola
+buttonSetariApp "1".."1" paginaSetariApp:click
 paginaSetariApp "1" *-- "1" buttonSchimbaTemaPagina
 paginaSetariApp "1" *-- "1" buttonnStergereCont
+paginaComparare *-- divPaginaComparare
+divPaginaComparare "1" *-- "1" tabelMasinaA
+divPaginaComparare "1" *-- "1" tabelMasinaB
+divPaginaComparare "1" *-- "1" buttonStartComparare
+tabelMasinaA "1" *-- "1" dropdownMarcaMasina
+tabelMasinaA "1" *-- "1" dropdownModelMasina
+tabelMasinaA "1" *-- "1" dropdownMotorizareMasina
+tabelMasinaA "1" *-- "1" dropdownTipCaroserieMasina
+tabelMasinaB "1" *-- "1" dropdownMarcaMasina
+tabelMasinaB "1" *-- "1" dropdownModelMasina
+tabelMasinaB "1" *-- "1" dropdownMotorizareMasina
+tabelMasinaB "1" *-- "1" dropdownTipCaroserieMasina
+buttonStartComparare .. paginaAfisareComparare:click
 @enduml
