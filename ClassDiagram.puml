@@ -1,414 +1,481 @@
 @startuml
 'https://plantuml.com/class-diagram
-class landingPage{
-Culoare_fundal
+class Landing_Page{
+Culoare_Fundal
 Mesaj:"Welcome to CarHub!"
-afiseaza_divLandingPage()
+Afiseaza_Div_Landing_Page()
 }
 
-class divLandingPage {
+class Div_Landing_Page {
 Inaltime
 Latime
-Culoare_fundal:alb
-afiseaza_formularAutentificare ()
-afiseaza_formularInregistrare ()
+Culoare_Fundal:alb
+Afiseaza_Formular_Autentificare ()
+Afiseaza_Formular_Inregistrare ()
 }
 
-class formularAutentificare{
+class Formular_Autentificare{
 Inaltime
 Latime
 Mesaj:"Ai cont?Autentifica-te"
-autentifica_cont()
+Afiseaza_Elemente_Formular ()
 }
 
-class textboxEmail{
+class Textbox_Email{
 Inaltime
 Latime
-Nr_maxim_caractere
-Name
-afiseaza_caractere()
-memoreaza_input ()
-limiteaza_caractere ()
+Nr_Maxim_Caractere
+Email
+Afiseaza_Caractere()
+Memoreaza_Input ()
+Limiteaza_Caractere ()
 }
 
-class textboxParola{
+class Textbox_Parola{
 Inaltime
 Latime
-Nr_maxim_caractere
-parola
-memoreaza_input ()
-limiteaza_caractere ()
+Nr_Maxim_Caractere
+Parola
+Memoreaza_Input ()
+Limiteaza_Caractere ()
 }
 
-class checkbuttonTineMinte{
+class Checkbutton_Tine_Minte{
 Stare
-Tine_minte_parola()
+Mesaj
+Memoreaza_Parola ()
+Memoreaza_Email ()
+
 }
 
-class buttonAutentificare{
+class Button_Autentificare{
+Inaltime
+Latime
+Text
+Culoare
+Verifica_Datele()
+Deschide_HomePage()
+}
+
+class Button_Uitat_Parola{
 Inaltime
 Latime
 Culoare
 Text
-verifica_datele()
-deschide_Home_Page()
+Deschide_Pagina_Schimbare_Parola()
 }
 
-class buttonUitatParola{
-Inaltime
-Latime
-Culoare
-Text
-deschide_pagina_schimbare_parola()
+class Cont_Utilizator{
+Inregistreaza_Cont ()
+Verifica_Email_Duplicat ()
 }
 
-class contUtilizator{
-inregistreaza_cont ()
-verifica_email_duplicat ()
+class Email_Cont {
+Email
+Nr_Caractere
+Memoreaza_Email_Cont ()
 }
 
-class emailCont {
-email
-nr_caractere
-memoreaza_emailCont ()
+class Parola_Cont {
+Parola
+Nr_Caractere
+Memoreaza_Parola_Cont ()
 }
 
-class parolaCont {
-parola
-nr_caractere
-memoreaza_parolaCont ()
-}
-
-class formularInregistrare{
+class Formular_Inregistrare{
 Inaltime
 Latime
 Mesaj:"Nu ai cont?Creaza unul"
-trimite_date_cont_baza_date ()
+Afiseaza_Elemente_Formular ()
 }
 
-class textboxConfirmareParola {
+class Textbox_Confirmare_Parola {
 Inaltime
 Latime
-Tip_caractere
-memoreaza_input ()
-limiteaza_caractere ()
+Nr_Maxim_Caractere
+Parola
+Memoreaza_Input ()
+Limiteaza_Caractere ()
 }
 
-class buttonInregistrare{
-Inaltime
-Latime
-Culoare
-Text
-creaza_contul()
-}
-
-class bazaDateConturi{
-lista_conturi
-stocheaza_conturile()
-}
-
-class popupEmailParolaGresite{
-mesaj
-afisare_mesaj()
-}
-
-class butonReincearca{
+class Button_Inregistrare{
 Inaltime
 Latime
 Culoare
 Text
-inchide_popup()
+Trimite_Date_Cont_Baza_Date ()
+Creaza_Contul()
+}
+
+class Baza_Date_Conturi{
+Lista_Conturi
+Stocheaza_Conturile()
+}
+
+class Popup_Email_Parola_Gresite{
+Mesaj
+Inaltime
+Latime
+Afisare_Mesaj()
+}
+
+class Buton_Reincearca{
+Inaltime
+Latime
+Culoare
+Text
+Inchide_Popup()
 }
 
 class HomePage{
-culoare_fundal
-afiseaza_elemente_HomePage()
+Culoare_Fundal
+Afiseaza_Elemente_HomePage()
 }
 
 class Navbar {
-culoare_fundal
+Culoare_Fundal
 Inaltime
 Latime
-afiseaza_butoane_Navbar ()
+Afiseaza_Butoane_Navbar ()
+}
+
+class Div_Stire{
+Inaltime
+Latime
+Poza_Stire
+Descriere_Stire
+Afiseaza_Poza_Stire ()
+Afiseaza_Descriere_Stire ()
+Deschide_Pagina_Stire ()
+}
+
+class Pagina_Stire {
+Culoare_Fundal
+Info_Stire
+Afiseaza_Info_Stire()
+}
+
+class Button_Profil_Utilizator {
+Inaltime
+Latime
+Text
+Culoare
+Deschide_Pagina_Profil_Utilizator ()
+}
+
+class Pagina_Profil_Utilizator {
+Culoare_Fundal
+Afiseaza_Elemente_Profil_Utilizator ()
+}
+
+class Button_Comparare {
+Inaltime
+Latime
+Text
+Culoare
+Deschide_Pagina_Comparare ()
+}
+
+class Pagina_Comparare {
+Culoare_Fundal
+Afiseaza_Elemente_Pagina_Comparare ()
+}
+
+class Button_Forum {
+Inaltime
+Latime
+Text
+Cculoare
+Deschide_Pagina_Forum ()
+}
+
+class Pagina_Forum {
+Culoare_Fundal
+Afiseaza_Elemente_Forum ()
+}
+
+class Poza_Profil_Cont{
+Forma
+Latime
+Inaltime
+Memoreaza_Poza_Profil_Cont ()
+}
+
+class Nume_Cont {
+Nume
+Font
+Memoreaza_Nume_Cont ()
+}
+
+class Info_Masina {
+Brand_Masina
+Model_Masina
+An_Fabricatie
+Motorizare
+Memoreaza_Info_Masina ()
+}
+
+class Descriere_Cont {
+Limita_Caractere
+Text
+Memoreaza_Descriere_Cont ()
+}
+
+class Button_Editare_Profil {
+Inaltime
+Latime
+Text
+Culoare
+Permite_Editare_Campuri ()
+}
+
+class Button_Setari_App {
+Inaltime
+Latime
+Text
+Culoare
+Deschide_Pagina_Setari_App ()
+}
+
+class Pagina_Setari_App {
+Culoare_Fundal
+Afiseaza_Butoane_Setari_App ()
+}
+
+class Div_Detalii_Cont {
+Inaltime
+Latime
+Afiseaza_Info_Masina ()
+Afiseaza_Caractere ()
+Afiseaza_Poza_Profil ()
+Afiseaza_Nume_Cont ()
+}
+
+class Button_Schimba_Tema_Pagina {
+Inaltime
+Latime
+Text
+Culoare
+Schimba_Tema_Paginii()
+}
+
+class Button_Stergere_Cont {
+Inaltime
+Latime
+Text
+Culoare
+Sterge_Cont_Baza_Date()
+}
+
+class Div_Pagina_Comparare {
+Inaltime
+Latime
+Culoare_fundal
+Afiseaza_Tabel_Masina_A ()
+Afiseaza_Tabel_Masina_B ()
+}
+
+class Tabel_Masina_A{
+Inaltime
+Latime
+Text:Masina A
+Afiseaza_Dropdownuri ()
+}
+
+class Tabel_Masina_B {
+Inaltime
+Latime
+Text:Masina B
+Afiseaza_Dropdownuri ()
+}
+
+class Button_Start_Comparare {
+Inaltime
+Latime
+Text
+Culoare
+Afiseaza_Comparatia_Masinilor ()
+}
+
+class Dropdown_Marca_Masina {
+Lista_Marci_Masini
+Afiseaza_Lista_Marci_Masini()
+Memoreaza_Optiunea_Selectata()
+}
+
+class Dropdown_Model_Masina {
+Lista_Modele_Masini
+Afiseaza_Lista_Modele_Masini ()
+Memoreaza_Optiunea_Selectata()
+}
+
+class Dropdown_Tip_Caroserie_Masina {
+Lista_Tip_Caroserii_Masini
+Afiseaza_Lista_Tip_Caroserii_Masini ()
+Memoreaza_Optiunea_Selectata()
+}
+
+class Dropdown_Motorizare_Masina {
+Lista_Motorizari_Masini
+Afiseaza_Lista_Motorizari_Masini()
+Memoreaza_Optiunea_Selectata()
+}
+
+class Div_Subiect {
+Inaltime
+Latime
+Titlu_Subiect
+Autor
+Deschide_Pagina_Discutii ()
+Afiseaza_Titlu_Subiect ()
+Afiseaza_Autor ()
 }
 
 class Searchbar{
 Inaltime
 Latime
-Input_text
-Memoreaza_input_text ()
-Cauta_input_text ()
-Face_request_DB ()
-Afiseaza_lista_cautari ()
+Input_Text
+Memoreaza_Input_Text ()
+Cauta_Input_Text ()
+Face_Request_DB ()
+Afiseaza_Lista_Cautari ()
 }
 
-class divStire{
+class Button_Scrie_Topic {
 Inaltime
 Latime
-Afiseaza_pozaStire ()
-Afiseaza_infoStire ()
-Deschide_paginaStire ()
+Culoare
+Iconita
+Deschide_Fereastra_Scrie_Topic ()
 }
 
-class pozaStire {
-poza
-Inaltime
-Latime
-afiseaza_poza ()
+class Pagina_Subiect {
+Titlu_Subiect
+Autor
+Text_Discutie
+Data_Postare
+Afiseaza_Titlu_Subiect ()
+Afiseaza_Autor ()
+Afiseaza_Text_Discutie ()
+Afiseaza_Data_Postare ()
 }
 
-class descriereStire {
-text
-numar_caractere
-afiseaza_text ()
-}
-
-class paginaStire {
-culoare_fundal
-info_stire
-afiseaza_info_stire()
-}
-
-class buttonProfilUtilizator {
-Inaltime
-Latime
-text
-culoare
-deschide_paginaProfilutilizator ()
-}
-
-class paginaProfilUtilizator {
-culoare_fundal
-afiseaza_elemente_ProfilUtilizator ()
-}
-
-class buttonComparare {
-Inaltime
-Latime
-text
-culoare
-deschide_paginaComparare ()
-}
-
-class paginaComparare {
-culoare_fundal
-afiseaza_elemente_paginaComparare ()
-}
-
-class buttonForum {
-Inaltime
-Latime
-text
-culoare
-deschide_paginaForum ()
-}
-
-class paginaForum {
-culoare_fundal
-afiseaza_elemente_Forum ()
-}
-
-class buttonReview {
-Inaltime
-Latime
-text
-culoare
-deschide_paginaReview ()
-}
-
-class paginaReview {
-culoare_fundal
-afiseaza_elemente_paginaReview()
-}
-
-class pozaProfilCont{
-Forma
-Latime
-Inaltime
-memoreaza_pozaProfilCont ()
-}
-
-class numeCont {
-nume
-font
-memoreaza_numeCont ()
-}
-
-class infoMasina {
-brand_masina
-model_masina
-an_fabricatie
-motorizare
-memoreaza_infoMasina ()
-}
-
-class descriereCont {
-limita_caractere
-text
-memoreaza_descriereCont ()
-}
-
-class buttonEditareProfil {
+class Div_Replici_Discutie {
 Inaltime
 Latime
 Text
-Culoare
-permite_editare_campuri ()
+Afiseaza_Text ()
 }
 
-class buttonSetariApp {
+class Textbox_Replica {
 Inaltime
 Latime
+Input
+Memoreaza_Input ()
+Afiseaza_Input()
+}
+
+class Button_Trimite_Replica {
+Inaltime
+Latime
+Culoare
 Text
+Incarca_Input_Textbox_Replica ()
+}
+
+class Fereastra_Scrie_Topic {
+Inaltime
+Latime
+Afiseaza_Textboxuri ()
+Afiseaza_Button_Incarca_Postare ()
+}
+
+class Textbox_Titlu {
+Inaltime
+Latime
+Input
+Memoreaza_Input ()
+Afiseaza_Input ()
+}
+
+class Textbox_Subiect {
+Inaltime
+Latime
+Input
+Memoreaza_Input ()
+Afiseaza_Input ()
+}
+
+class Button_Incarca_Postare {
+Inaltime
+Latime
 Culoare
-deschide_paginaSetariApp ()
-}
-
-class paginaSetariApp {
-culoare_fundal
-afiseaza_butoane_SetariApp ()
-}
-
-class divDetaliiCont {
-Inaltime
-Latime
-afiseaza_infoMasina ()
-afiseaza_caractere ()
-afiseaza_pozaProfil ()
-afiseaza_numeCont ()
-}
-
-class buttonSchimbaTemaPagina {
-Inaltime
-Latime
 Text
-Culoare
-schimba_tema_paginii()
+Incarca_Postarea ()
 }
 
-class buttonnStergereCont {
-Inaltime
-Latime
-Text
-Culoare
-sterge_cont_baza_date()
-}
-
-class divPaginaComparare {
-Inaltime
-Latime
-Culoare_fundal
-Afiseaza_tabelMasinaA ()
-Afiseaza_tabelMasinaB ()
-}
-
-class tabelMasinaA {
-Inaltime
-Latime
-text:Masina A
-Afiseaza_dropdownuri ()
-}
-
-class tabelMasinaB {
-Inaltime
-Latime
-text:Masina B
-Afiseaza_dropdownuri ()
-}
-
-class buttonStartComparare {
-Inaltime
-Latime
-Text
-Culoare
-deschide_paginaAfisareComparare ()
-}
-
-class dropdownMarcaMasina {
-listaMarciMasini
-AfiseazaListaMarciMasini()
-MemoreazaOptiuneaSelectata()
-}
-
-class dropdownModelMasina {
-listaModeleMasini
-AfiseazaListaModeleMasini ()
-MemoreazaOptiuneaSelectata ()
-}
-
-class dropdownTipCaroserieMasina {
-listaTipCaroseriiMasini
-AfiseazaListaTipCaroseriiMasini ()
-MemoreazaOptiuneaSelectata()
-}
-
-class dropdownMotorizareMasina {
-listaMotorizariMasini
-AfiseazaListaMotorizariMasini()
-MemoreazaOptiuneaSelectata()
-}
-
-class paginaAfisareComparare {
-}
-'clasele sunt la general, obiectele sunt proprietati valorizate
-'UCdiag ma ajuta sa stabilesc propr si funct in CDiag
-'mostenire- creez o clasa de baza si migrez chestii comune si trag relatia de la derivate la clasa de baza fara sa mai scriu in cele de baza chestiile comune
-
-landingPage "1" *-- "1" divLandingPage
-divLandingPage "1" *-- "1" formularAutentificare
-divLandingPage "1" *-- "1" formularInregistrare
-formularAutentificare "1" *-- "1" textboxEmail
-formularAutentificare "1" *-- "1" textboxParola
-formularAutentificare "1" *-- "1" checkbuttonTineMinte
-formularAutentificare "1" *-- "1" buttonUitatParola
-formularAutentificare "1" *-- "1" buttonAutentificare
-buttonAutentificare "1" .. "1" HomePage:click
-formularInregistrare "1" *-- "1" textboxEmail
-formularInregistrare "1" *-- "1" textboxParola
-formularInregistrare "1" *-- "1" textboxConfirmareParola
-formularInregistrare "1" *-- "1" buttonInregistrare
-bazaDateConturi "1" o-- "0..n" contUtilizator
-contUtilizator "1" *-- "1" emailCont
-contUtilizator "1" *-- "1" parolaCont
-contUtilizator "1" *-- "1" numeCont
-contUtilizator "1" *-- "0..n" infoMasina
-contUtilizator "1" *-- "0..1" descriereCont
-contUtilizator "1" *-- "0..1" pozaProfilCont
-popupEmailParolaGresite "1" *-- "1" butonReincearca
+Landing_Page "1" *-- "1" Div_Landing_Page
+Div_Landing_Page "1" *-- "1" Formular_Autentificare
+Div_Landing_Page "1" *-- "1" Formular_Inregistrare
+Formular_Autentificare "1" *-- "1" Textbox_Email
+Formular_Autentificare "1" *-- "1" Textbox_Parola
+Formular_Autentificare "1" *-- "1" Checkbutton_Tine_Minte
+Formular_Autentificare "1" *-- "1" Button_Uitat_Parola
+Formular_Autentificare "1" *-- "1" Button_Autentificare
+Button_Autentificare "1" .. "1" HomePage:click
+Formular_Inregistrare "1" *-- "1" Textbox_Email
+Formular_Inregistrare "1" *-- "1" Textbox_Parola
+Formular_Inregistrare "1" *-- "1" Textbox_Confirmare_Parola
+Formular_Inregistrare "1" *-- "1" Button_Inregistrare
+Baza_Date_Conturi "1" o-- "0..n" Cont_Utilizator
+Cont_Utilizator "1" *-- "1" Email_Cont
+Cont_Utilizator "1" *-- "1" Parola_Cont
+Cont_Utilizator "1" *-- "1" Nume_Cont
+Cont_Utilizator "1" *-- "0..n" Info_Masina
+Cont_Utilizator "1" *-- "0..1" Descriere_Cont
+Cont_Utilizator "1" *-- "0..1" Poza_Profil_Cont
+Popup_Email_Parola_Gresite "1" *-- "1" Buton_Reincearca
 HomePage "1" *-- "1" Navbar
-HomePage "1" *-- "1" divStire
-divStire "1" *-- "1" pozaStire
-divStire "1" *-- "1" descriereStire
-divStire "1" .. "1" paginaStire:click
-Navbar "1" *-- "1" buttonProfilUtilizator
-Navbar "1" *-- "1" buttonComparare
-Navbar "1" *-- "1" buttonForum
-Navbar "1" *-- "1" buttonReview
-buttonProfilUtilizator "1" .. "1" paginaProfilUtilizator:click
-buttonComparare "1" .. "1" paginaComparare:click
-buttonForum "1" .. "1" paginaForum:click
-buttonReview "1" .. "1" paginaReview:click
-paginaProfilUtilizator "1" *-- "1" divDetaliiCont
-paginaProfilUtilizator "1" *-- "1" buttonEditareProfil
-paginaProfilUtilizator "1" *-- "1" buttonSetariApp
-divDetaliiCont "1" *-- "0..1" pozaProfilCont
-divDetaliiCont "1" *-- "1" numeCont
-divDetaliiCont "1" *-- "0..1" infoMasina
-divDetaliiCont "1" *-- "0..1" descriereCont
-buttonSetariApp "1".."1" paginaSetariApp:click
-paginaSetariApp "1" *-- "1" buttonSchimbaTemaPagina
-paginaSetariApp "1" *-- "1" buttonnStergereCont
-paginaComparare *-- divPaginaComparare
-divPaginaComparare "1" *-- "1" tabelMasinaA
-divPaginaComparare "1" *-- "1" tabelMasinaB
-divPaginaComparare "1" *-- "1" buttonStartComparare
-tabelMasinaA "1" *-- "1" dropdownMarcaMasina
-tabelMasinaA "1" *-- "1" dropdownModelMasina
-tabelMasinaA "1" *-- "1" dropdownMotorizareMasina
-tabelMasinaA "1" *-- "1" dropdownTipCaroserieMasina
-tabelMasinaB "1" *-- "1" dropdownMarcaMasina
-tabelMasinaB "1" *-- "1" dropdownModelMasina
-tabelMasinaB "1" *-- "1" dropdownMotorizareMasina
-tabelMasinaB "1" *-- "1" dropdownTipCaroserieMasina
-buttonStartComparare .. paginaAfisareComparare:click
+HomePage "1" *-- "1" Div_Stire
+Div_Stire .. Pagina_Stire:click
+Navbar "1" *-- "1" Button_Profil_Utilizator
+Navbar "1" *-- "1" Button_Comparare
+Navbar "1" *-- "1" Button_Forum
+Button_Profil_Utilizator .. Pagina_Profil_Utilizator:click
+Button_Comparare .. Pagina_Comparare:click
+Button_Forum .. Pagina_Forum:click
+Pagina_Profil_Utilizator "1" *-- "1" Div_Detalii_Cont
+Pagina_Profil_Utilizator "1" *-- "1" Button_Editare_Profil
+Pagina_Profil_Utilizator "1" *-- "1" Button_Setari_App
+Div_Detalii_Cont "1" *-- "0..1" Poza_Profil_Cont
+Div_Detalii_Cont "1" *-- "1" Nume_Cont
+Div_Detalii_Cont "1" *-- "0..1" Info_Masina
+Div_Detalii_Cont "1" *-- "0..1" Descriere_Cont
+Button_Setari_App "1".."1" Pagina_Setari_App:click
+Pagina_Setari_App "1" *-- "1" Button_Schimba_Tema_Pagina
+Pagina_Setari_App "1" *-- "1" Button_Stergere_Cont
+Pagina_Comparare *-- Div_Pagina_Comparare
+Div_Pagina_Comparare "1" *-- "1" Tabel_Masina_A
+Div_Pagina_Comparare "1" *-- "1" Tabel_Masina_B
+Div_Pagina_Comparare "1" *-- "1" Button_Start_Comparare
+Tabel_Masina_A "1" *-- "1" Dropdown_Marca_Masina
+Tabel_Masina_A "1" *-- "1" Dropdown_Model_Masina
+Tabel_Masina_A "1" *-- "1" Dropdown_Motorizare_Masina
+Tabel_Masina_A "1" *-- "1" Dropdown_Tip_Caroserie_Masina
+Tabel_Masina_B "1" *-- "1" Dropdown_Marca_Masina
+Tabel_Masina_B "1" *-- "1" Dropdown_Model_Masina
+Tabel_Masina_B "1" *-- "1" Dropdown_Motorizare_Masina
+Tabel_Masina_B "1" *-- "1" Dropdown_Tip_Caroserie_Masina
+Pagina_Forum *-- Div_Subiect
+Pagina_Forum *-- Searchbar
+Pagina_Forum *-- Button_Scrie_Topic
+Div_Subiect .. Pagina_Subiect:Click
+Pagina_Subiect *-- Div_Replici_Discutie
+Pagina_Subiect *-- Textbox_Replica
+Pagina_Subiect *-- Button_Trimite_Replica
+Button_Scrie_Topic .. Fereastra_Scrie_Topic:click
+Fereastra_Scrie_Topic *-- Textbox_Titlu
+Fereastra_Scrie_Topic *-- Textbox_Subiect
+Fereastra_Scrie_Topic *-- Button_Incarca_Postare
+
 @enduml

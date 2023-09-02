@@ -11,7 +11,6 @@ package LandingPage {
     usecase "Formularul va tine \nminte email si parola" as UC24
     usecase "Pagina va afisa un \n pop up cu mesajul \n"Email sau parola gresite" \n si un buton de "Reincearca"" as UC25
     usecase "Fereastra Pop-up \n se va inchide" as UC26
-    usecase "Se va trimite un \n email utilizatorului cum ca \n contul lui a fost creat" as UC36
     usecase "Se incrementeaza numarul \n de caractere introduse si \n se compara cu numarul maxim \n de caractere limita" as UC37
     usecase "Se va deschide o pagina cu \n un textbox pentru email-ul utilizatorului \n si un buton de "Urmatorul"" as UC38
     usecase "Va aparea un alt textbox \n pentru noua parola si \n confirmarea parolei si un \n buton cu textul "Schimba parola"" as UC39
@@ -29,7 +28,7 @@ package HomePage {
 }
 
 package 1)Profil_Utilizator {
-    usecase "Se afiseaza pagina destinata profilului de \n utilizator care contine poza de profil, numele, \n descriere, detalii despre masina, un buton de \n editare date, un buton de afisare prieteni, buton \n de afisare grupuri si un buton destinat setarilor aplicatiei" as UC1
+    usecase "Se afiseaza pagina destinata profilului de \n utilizator care contine poza de profil, numele, \n descriere, detalii despre masina, un buton de \n editare date si un buton destinat setarilor aplicatiei" as UC1
     usecase "Se va afisa sectiunea de \n editare a datelor si un buton \n de salvare a modificarilor" as UC2
     usecase "Se va deschide o pagina \n care contine un buton pentru\n schimbarea parolei,un buton \n pentru schimbarea temei paginii si  \n un buton pentru stergerea cotului." as UC7
     usecase "Se va afisa o pagina cu 3 variante \n de alegere: automat, light sau dark" as UC9
@@ -38,21 +37,27 @@ package 1)Profil_Utilizator {
     usecase "Se va afisa o fereastra cu \n un buton de confirmare" as UC12
     usecase "Se va afisa \n Landing Page" as UC13
     usecase "Se va trimite un request \n catre baza de date pentru \n stergerea email-ului \n si parolei din evidenta" as UC14
+    usecase "Se va actualiza baza de \n date cu informatiile modificate" as UC36
+    usecase "Pagina va iesi \n din modul de editare." as UC42
 }
 
 package 2)Comparare_masini {
     usecase "Se va afisa o pagina care \n contine acelasi NavBar in \n partea stanga iar pe mijloc va \n fi afisat un div impartit in 2 parti: \n prima parte pentru alegerea \n primei masini , a 2 a parte pentru \n alegerea masinii 2 si un \n buton de start comparare" as UC27
     usecase "Se va afisa o lista \n aferenta fiecarui \n tip de informatie" as UC28
-    usecase "sub acest div se va afisa \n un alt div care afiseaza \n o poza pentru fiecare masina, \n sub poze se vor afisa brand-ul \n si marca masinilor, iar sub acestea \n se vor afisa informatiile legate de \n anul productiei, informatii legate \n de dimensiuni, informatii ale motoarelor, \n clasa masinilor si siguranta in caz de \n impact. De asemenea, va exista si o rubrica \n de review-uri lasate de proprietarii masinilor." as UC29
-    usecase "se va deschide o pagina cu \n mai multe casute, fiecare \n casuta afisand numele utilizatorului, \n rating-ul pe care l-a acordat \n si o parere personala" as UC30
-}
+    usecase "sub acest div se va afisa \n un alt div care afiseaza \n o poza pentru fiecare masina, \n sub poze se vor afisa brand-ul \n si marca masinilor, iar sub acestea \n se vor afisa informatiile legate de \n anul productiei, informatii legate \n de dimensiuni, informatii ale motoarelor, \n clasa masinilor si siguranta in caz de \n impact." as UC29
+    }
 
 package 3)Forum {
-    usecase "se va afisa o pagina care \n contine acelasi NavBar in partea \n stanga iar pe mijloc vor fi \n afisate mai multe cadrane cu \n diferite subiecte de discutie recente \n si un searchbar pentru a cauta subiecte \n in functie de cuvintele cheie scrise" as UC31
-    usecase "se va deschide pagina \n dedicata acelei discutii,\n cu textul integral, \n data postarii si replicile \n oferite de ceilalti utilizatori" as UC32
-    usecase "utilizatorului ii este \n permisa scrierea cuvintelor" as UC33
-    usecase "se va executa algoritmul \n de cautare pe baza cuvintelor" as UC34
-    usecase "se vor afisa subiectele care \n au o potrivire de cuvinte" as UC35
+    usecase "Se va afisa o pagina \n care contine acelasi NavBar \n in partea stanga iar pe \n mijloc vor fi afisate mai \n multe cadrane cu diferite \n subiecte de discutie recente, \n un searchbar pentru a cauta \n subiecte in functie de cuvintele \n cheie scrise si un buton in \n coltul din dreapta jos al \n paginii pentru a scrie un topic." as UC31
+    usecase "Se va deschide fereastra \n dedicata acelei discutii, cu \n textul integral, data postarii, \n replicile oferite de ceilalti \n utilizatori si un textbox pentru \n a scrie o replica la o postare, \n alaturi de un buton de trimite" as UC32
+    usecase "Utilizatorului ii este \n permisa scrierea cuvintelor" as UC33
+    usecase "Se va executa algoritmul \n de cautare pe baza cuvintelor" as UC34
+    usecase "Se vor afisa subiectele care \n au o potrivire de cuvinte" as UC35
+    usecase "Se va posta ca replica raspunsul \n tau, sub ultima replica cea mai recenta." as UC43
+    usecase "Se va deschide o \n fereastra de redactare \n a unui subiect de discutie" as UC44
+    usecase "Informatiile vor fi \n trimise la verificat la \n admin pentru a nu fi scrise \n doar caractere aleatorii" as UC45
+    usecase "Subiectele de discutie se \n vor afisa in pagina 'Forum'" as UC48
+    usecase "Admin va sterge informatia" as UC49
 }
 
 'Landing Page
@@ -61,8 +66,7 @@ u -down-> UC46:Completeaza campurile pentru \ninregistrare si apasa 'Inregistrar
 UC46 -down-> UC47:Daca email este duplicat
 UC46 -down-> UC22:Daca email nu este duplicat
 u -down-> UC21:Introduce mai mult \n de 16 caractere in campuri.
-UC22 -down-> UC36
-UC36 -down->UC20
+UC22 -down-> UC20
 u -down-> UC23:Completeaza campurile pentru \nautentificare si apasa 'Autentificare'
 u -down-> UC24:Bifeaza checkbox\n-ul 'Tine-ma minte'
 UC23 -down-> UC25:Daca datele sunt gresite
@@ -95,13 +99,14 @@ u -up-> UC11:Alege tema dark
 u -up-> UC12:Apasa butonul de stergere cont
 u -up-> UC14:Apasa butonul de confirmare a stergerii contului
 UC14 -up-> UC13
+u -up-> UC36:Apasa butonul de salvare a modificarilor
+UC36 -up-> UC42
 
 
 'Comparare masini
 u -down--> UC27:Apasa pe butonul \n 2.Comparare masini
 u -down--> UC28:La apasarea \n fiecarui dropdown
 u -down--> UC29:La apasarea butonului \n de comparare masini
-u -down--> UC30:La apasarea ste-\nlutelor de rating
 
 
 'Forum
@@ -110,12 +115,10 @@ u -up-> UC32:La accesarea \n unui subiect
 u -up-> UC33:La apasarea \n searchbar-ului
 u -up-> UC34:Cand utilizatorul va \n apasa enter la searchbar
 UC34 -up->UC35
-
+u -up-> UC43:La completarea textbox-ului \n si apasarea butonului trimite
+u -up-> UC44:La apasarea butonului din \n dreapta jos al paginii
+u -up-> UC45:La completarea textbox-urilor \n si apasarea butonului incarca
+UC45 -up-> UC48:Daca ceea ce a fost \n scris este in regula
+UC45 -up-> UC49:Daca ceea ce a fost \n scris nu este in regula
 
 @enduml
-'gandeste d.p.d.v al aplicatiei(gandeste cum fac ele in spate)
-'scriem si despre resursele web pe care le foloseste(de exemplu:foloseste imaginea din sursa x, ia info din x)
-'use case = descrie functionalitate
-'use case= caz de utilizare
-'gandeste te la actori, daca utilizatorul este cel care face toate actiunile
-'actorul este declansatorul
