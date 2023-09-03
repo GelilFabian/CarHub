@@ -65,6 +65,54 @@ Text
 Deschide_Pagina_Schimbare_Parola()
 }
 
+class Pagina_Resetare_Parola {
+Culoare_Fundal
+Afiseaza_Textboxuri_Resetare_Parola ()
+}
+
+class Textbox_Parola_Noua {
+Inaltime
+Latime
+Nr_Maxim_Caractere
+Parola
+Memoreaza_Input ()
+Limiteaza_Caractere ()
+}
+
+class Textbox_Confirmare_Parola_Noua {
+Inaltime
+Latime
+Nr_Maxim_Caractere
+Parola
+Memoreaza_Input ()
+Limiteaza_Caractere ()
+}
+
+class Button_Schimba_Parola {
+Latime
+Inaltime
+Text
+Culoare
+Inlocuieste_Parola_Veche_cu_Parola_Noua ()
+Afiseaza_Popup_Parola_Schimbata ()
+Intoarce_pe_Landing_Page ()
+}
+
+class Popup_Parola_Schimbata {
+Mesaj
+Inaltime
+Latime
+Timp_Expirare
+Afiseaza_Mesaj ()
+}
+
+class Popup_Required {
+Mesaj
+Inaltime
+Latime
+Afiseaza_Mesaj ()
+}
+
 class Cont_Utilizator{
 Inregistreaza_Cont ()
 Verifica_Email_Duplicat ()
@@ -116,7 +164,7 @@ class Popup_Email_Parola_Gresite{
 Mesaj
 Inaltime
 Latime
-Afisare_Mesaj()
+Afiseaza_Mesaj()
 }
 
 class Buton_Reincearca{
@@ -422,7 +470,8 @@ Formular_Autentificare "1" *-- "1" Textbox_Parola
 Formular_Autentificare "1" *-- "1" Checkbutton_Tine_Minte
 Formular_Autentificare "1" *-- "1" Button_Uitat_Parola
 Formular_Autentificare "1" *-- "1" Button_Autentificare
-Button_Autentificare "1" .. "1" HomePage:click
+Button_Uitat_Parola .. Pagina_Resetare_Parola:click
+Button_Autentificare .. HomePage:click
 Formular_Inregistrare "1" *-- "1" Textbox_Email
 Formular_Inregistrare "1" *-- "1" Textbox_Parola
 Formular_Inregistrare "1" *-- "1" Textbox_Confirmare_Parola
@@ -451,10 +500,10 @@ Div_Detalii_Cont "1" *-- "0..1" Poza_Profil_Cont
 Div_Detalii_Cont "1" *-- "1" Nume_Cont
 Div_Detalii_Cont "1" *-- "0..1" Info_Masina
 Div_Detalii_Cont "1" *-- "0..1" Descriere_Cont
-Button_Setari_App "1".."1" Pagina_Setari_App:click
+Button_Setari_App .. Pagina_Setari_App:click
 Pagina_Setari_App "1" *-- "1" Button_Schimba_Tema_Pagina
 Pagina_Setari_App "1" *-- "1" Button_Stergere_Cont
-Pagina_Comparare *-- Div_Pagina_Comparare
+Pagina_Comparare "1" *-- "1" Div_Pagina_Comparare
 Div_Pagina_Comparare "1" *-- "1" Tabel_Masina_A
 Div_Pagina_Comparare "1" *-- "1" Tabel_Masina_B
 Div_Pagina_Comparare "1" *-- "1" Button_Start_Comparare
@@ -466,16 +515,19 @@ Tabel_Masina_B "1" *-- "1" Dropdown_Marca_Masina
 Tabel_Masina_B "1" *-- "1" Dropdown_Model_Masina
 Tabel_Masina_B "1" *-- "1" Dropdown_Motorizare_Masina
 Tabel_Masina_B "1" *-- "1" Dropdown_Tip_Caroserie_Masina
-Pagina_Forum *-- Div_Subiect
-Pagina_Forum *-- Searchbar
-Pagina_Forum *-- Button_Scrie_Topic
+Pagina_Forum "1" *-- "0..n" Div_Subiect
+Pagina_Forum "1" *-- "1" Searchbar
+Pagina_Forum "1" *-- "1" Button_Scrie_Topic
 Div_Subiect .. Pagina_Subiect:Click
-Pagina_Subiect *-- Div_Replici_Discutie
-Pagina_Subiect *-- Textbox_Replica
-Pagina_Subiect *-- Button_Trimite_Replica
+Pagina_Subiect "1" *-- "0..n" Div_Replici_Discutie
+Pagina_Subiect "1" *-- "1" Textbox_Replica
+Pagina_Subiect "1" *-- "1" Button_Trimite_Replica
 Button_Scrie_Topic .. Fereastra_Scrie_Topic:click
-Fereastra_Scrie_Topic *-- Textbox_Titlu
-Fereastra_Scrie_Topic *-- Textbox_Subiect
-Fereastra_Scrie_Topic *-- Button_Incarca_Postare
-
+Fereastra_Scrie_Topic "1" *-- "1" Textbox_Titlu
+Fereastra_Scrie_Topic "1" *-- "1" Textbox_Subiect
+Fereastra_Scrie_Topic "1" *-- "1" Button_Incarca_Postare
+Pagina_Resetare_Parola "1" *-- "1" Textbox_Email
+Pagina_Resetare_Parola "1" *-- "1" Textbox_Parola_Noua
+Pagina_Resetare_Parola "1" *-- "1" Textbox_Confirmare_Parola_Noua
+Pagina_Resetare_Parola "1" *-- "1" Button_Schimba_Parola
 @enduml

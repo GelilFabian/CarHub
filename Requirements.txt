@@ -1,8 +1,6 @@
 'clasele sunt la general, obiectele sunt proprietati valorizate
 'UCdiag ma ajuta sa stabilesc propr si funct in CDiag
 'mostenire- creez o clasa de baza si migrez chestii comune si trag relatia de la derivate la clasa de baza fara sa mai scriu in cele de baza chestiile comune
-
-//scrie proprietatile si functionalitatile claselor aici
 //implementeaza ideea de "Welcome 'user'"
 
 Utilizatorul deschide browserul.
@@ -23,13 +21,12 @@ in baza de date a conturilor si se va afisa Landing Page-ul pentru completarea c
 
 Pentru ca formularul sa tina minte email ul si parola utilizatorului(pentru a nu fi nevoit utilizatorul sa introduca email-ul si parola la fiecare accesare a site-ului),se vor
 completa campul email si campul parola si se va bifa checkbutton-ul "Tine-ma minte" inainte de apasarea butonului "Autentificare".
-Daca utilizatorul apasa pe butonul "Am uitat parola" , se va deschide o pagina cu un textbox pentru email-ul utilizatorului si un buton de "Urmatorul".
-La completarea textbox-ului cu email-ul si apasarea butonului "Urmatorul" , va aparea un alt textbox pentru noua parola si confirmarea parolei si un buton cu textul "Schimba parola".
+Daca utilizatorul apasa pe butonul "Am uitat parola" , se va deschide o pagina cu un textbox pentru email-ul utilizatorului, un textbox pentru parola noua, un textbox pentru connfirmarea
+parolei si un buton de "Schimba parola".
 La completarea acestor textbox-uri si apasarea butonului "Schimba parola", se va trimite un request la baza de date de inlocuire a parolei vechi stocate cu cea noua si se va afisa
 popup-ul "Parola schimbata cu succes" pentru 5 secunde si apoi va disparea, urmand ca pagina sa trimita utilizatorul inapoi pe Landing Page.
 
-Dupa ce utilizatorul va apasa pe butonul "Autentificare", se va trimite un request catre baza de date cu informatia din campurile respective pentru a vedea
-corectitudinea lor.
+Dupa ce utilizatorul va apasa pe butonul "Autentificare", se va trimite un request catre baza de date pentru a verifica corectitudinea informatiei din campurile respective.
 Daca email sau parola sunt gresite sau daca nu se vor completa campurile,pagina va afisa un pop up cu mesajul "Email sau parola gresite" si un buton de
 "Reincearca".Dupa apasarea butonului "Reincearca", fereastra pop up se va inchide si va permite utilizatorului sa editeze campurile text.
 
@@ -46,7 +43,7 @@ unde se va afla poza de profil a utilizatorului impreuna cu numele acestuia lang
 anul fabricatiei, motorizarea, o mica descriere, buton pentru editare profil si un buton pentru setarile aplicatiei.
 Cand utilizatorul va apasa butonul de editare profil, pagina va permite utilizatorului sa editeze campul de nume si campul de informatii ale masinii si se va afisa
 un buton de salvare a modificarilor facute. La apasarea butonului de salvare a modificarilor, se va actualiza baza de date cu informatiile modificate si pagina va iesi din modul
-de editare.
+de editare. //nu stiu daca Pagina profil utilizator are ca agregate butonul de salvare modificari
 Cand utilizatorul va apasa butonul de setari ale aplcatiei, se va deschide o pagina care contine un buton pentru schimbarea temei paginii(light sau dark) si un buton
 pentru stergerea contului.
 Cand utilizatorul va apasa pe butonul de schimbare a temei paginii, se va afisa o pagina cu 3 variante de alegere: automat(prestabilit), light sau dark.
@@ -61,14 +58,14 @@ in 2 parti: prima parte pentru alegerea primei masini , a 2 a parte pentru alege
 dropdown-list pentru alegerea marcii masinii, unul pentru model, unul pentru tipul caroseriei si unul pentru motorizarea masinii. Toate aceste informatii
 din dropdown-uri se vor extrage dintr-o baza de date unde sunt introduse de admin. La apasarea fiecarui dropdown, se va afisa o lista aferenta fiecarui tip de informatie.
 La apasarea butonului de comparare masini, se va afisa sub tabele o poza pentru fiecare masina, sub poze se vor afisa brand-ul si marca masinilor, iar sub acestea se vor
-afisa informatiile legate de anul productiei, informatii legate de dimensiuni, informatii ale motoarelor, clasa masinilor si siguranta in caz de impact si niste stelute
+afisa informatiile legate de anul productiei, informatii legate de dimensiuni, informatii ale motoarelor, clasa masinilor si siguranta in caz de impact si 5 stelute
 care vor semnifica rating-ul masinii oferit de proprietarii unor astfel de masini.
 
 3)Forum:
 Facand click pe acest link, se va afisa o pagina care contine acelasi NavBar in partea stanga iar pe mijloc vor fi afisate mai multe cadrane cu diferite
 subiecte de discutie recente, un searchbar pentru a cauta subiecte in functie de cuvintele cheie scrise si un buton in coltul din dreapta jos al paginii pentru a scrie un topic.
 Subiectele de discutie vor fi niste cadrane care afiseaza titlul subiectului si autorul postarii, iar aceste cadrane se vor afla una sub alta, pe latimea div-ului central.
-La accesarea unui subiect, se va deschide fereastra dedicata acelei discutii, cu textul integral, data postarii, replicile oferite de ceilalti utilizatori si un textbox pentru
+La accesarea unui subiect, se va deschide fereastra dedicata acelei discutiei, cu textul integral, data postarii, replicile oferite de ceilalti utilizatori si un textbox pentru
 a scrie o replica la o postare, alaturi de un buton de trimite. La completarea textbox-ului si apasarea butonului trimite, se va posta ca replica raspunsul tau, sub ultima replica
 cea mai recenta.
 La apasarea searchbar-ului, utilizatorului ii este permisa scrierea. Cand utilizatorul va apasa enter la searchbar, se va executa algoritmul de cautare pe
