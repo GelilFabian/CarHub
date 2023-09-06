@@ -1,7 +1,9 @@
 'clasele sunt la general, obiectele sunt proprietati valorizate
 'UCdiag ma ajuta sa stabilesc propr si funct in CDiag
 'mostenire- creez o clasa de baza si migrez chestii comune si trag relatia de la derivate la clasa de baza fara sa mai scriu in cele de baza chestiile comune
-//implementeaza ideea de "Welcome 'user'"
+'clasele boundry interactioneaza cu exteriorul
+'clasele entity memoreaza informatie
+'clsele control manageriaza informatia
 
 Utilizatorul deschide browserul.
 Utilizatorul va introduce link-ul aplicatiei in bara de adrese a brwoser-ului si va apasa enter.

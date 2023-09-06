@@ -29,6 +29,8 @@ Email
 Afiseaza_Caractere()
 Memoreaza_Input ()
 Limiteaza_Caractere ()
+Incrementeaza_Nr_Caractere ()
+Afiseaza_Popup_Required ()
 }
 
 class Textbox_Parola{
@@ -38,6 +40,8 @@ Nr_Maxim_Caractere
 Parola
 Memoreaza_Input ()
 Limiteaza_Caractere ()
+Incrementeaza_Nr_Caractere ()
+Afiseaza_Popup_Required ()
 }
 
 class Checkbutton_Tine_Minte{
@@ -53,8 +57,9 @@ Inaltime
 Latime
 Text
 Culoare
-Verifica_Datele()
+Trimite_Request_Verificare ()
 Deschide_HomePage()
+Afiseaza_Popup_Email_Parola_Gresite ()
 }
 
 class Button_Uitat_Parola{
@@ -86,6 +91,8 @@ Nr_Maxim_Caractere
 Parola
 Memoreaza_Input ()
 Limiteaza_Caractere ()
+Incrementeaza_Nr_Caractere ()
+
 }
 
 class Button_Schimba_Parola {
@@ -93,7 +100,7 @@ Latime
 Inaltime
 Text
 Culoare
-Inlocuieste_Parola_Veche_cu_Parola_Noua ()
+Trimite_Request_Schimbare_Parola ()
 Afiseaza_Popup_Parola_Schimbata ()
 Intoarce_pe_Landing_Page ()
 }
@@ -144,6 +151,8 @@ Nr_Maxim_Caractere
 Parola
 Memoreaza_Input ()
 Limiteaza_Caractere ()
+Afiseaza_Popup_Required ()
+Incrementeaza_Nr_Caractere ()
 }
 
 class Button_Inregistrare{
@@ -153,6 +162,8 @@ Culoare
 Text
 Trimite_Date_Cont_Baza_Date ()
 Creaza_Contul()
+Verifica_Email_Duplicat()
+Afiseaza_Mesaj_Email_Inexistent ()
 }
 
 class Baza_Date_Conturi{
@@ -177,7 +188,9 @@ Inchide_Popup()
 
 class HomePage{
 Culoare_Fundal
-Afiseaza_Elemente_HomePage()
+Afiseaza_Divuri_Stiri ()
+Afiseaza_Navbar()
+Incarca_Divuri_Stiri()
 }
 
 class Navbar {
@@ -305,6 +318,7 @@ Latime
 Text
 Culoare
 Schimba_Tema_Paginii()
+Afiseaza_Teme_Aplicatie ()
 }
 
 class Button_Stergere_Cont {
@@ -313,6 +327,7 @@ Latime
 Text
 Culoare
 Sterge_Cont_Baza_Date()
+Deschide_Fereastra_Confirmare()
 }
 
 class Div_Pagina_Comparare {
@@ -436,6 +451,7 @@ Inaltime
 Latime
 Afiseaza_Textboxuri ()
 Afiseaza_Button_Incarca_Postare ()
+
 }
 
 class Textbox_Titlu {
@@ -459,6 +475,7 @@ Inaltime
 Latime
 Culoare
 Text
+Trimite_Input_Topic_Spre_Admin()
 Incarca_Postarea ()
 }
 
