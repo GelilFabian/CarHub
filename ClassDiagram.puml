@@ -1,8 +1,9 @@
 @startuml
 'https://plantuml.com/class-diagram
 class Landing_Page{
-Culoare_Fundal
+Tema_Pagina
 Mesaj:"Welcome to CarHub!"
+Afiseaza_Tema_Pagina ()
 Afiseaza_Div_Landing_Page()
 Afiseaza_Popup_Email_Parola_Gresite ()
 Afiseaza_Popup_Email_Existent ()
@@ -11,7 +12,7 @@ Afiseaza_Popup_Email_Existent ()
 class Div_Landing_Page {
 Inaltime
 Latime
-Culoare_Fundal:alb
+Culoare_Fundal
 Afiseaza_Formular_Autentificare ()
 Afiseaza_Formular_Inregistrare ()
 }
@@ -78,7 +79,8 @@ Deschide_Pagina_Schimbare_Parola()
 }
 
 class Pagina_Resetare_Parola {
-Culoare_Fundal
+Tema_Pagina
+Afiseaza_Tema_Pagina ()
 Afiseaza_Textbox_Email ()
 Afiseaza_Textbox_Parola_Noua ()
 Afiseaza_Textbox_Confirmare_Parola_Noua()
@@ -215,7 +217,8 @@ Inchide_Popup()
 }
 
 class HomePage{
-Culoare_Fundal
+Tema_Pagina
+Afiseaza_Tema_Pagina ()
 Afiseaza_Divuri_Stiri ()
 Afiseaza_Navbar()
 Incarca_Divuri_Stiri()
@@ -241,8 +244,9 @@ Deschide_Pagina_Stire ()
 }
 
 class Pagina_Stire {
-Culoare_Fundal
+Tema_Pagina
 Info_Stire
+Afiseaza_Tema_Pagina ()
 Afiseaza_Info_Stire()
 }
 
@@ -255,7 +259,8 @@ Deschide_Pagina_Profil_Utilizator ()
 }
 
 class Pagina_Profil_Utilizator {
-Culoare_Fundal
+Tema_Pagina
+Afiseaza_Tema_Pagina ()
 Afiseaza_Div_Detalii_Cont ()
 }
 
@@ -268,7 +273,8 @@ Deschide_Pagina_Comparare ()
 }
 
 class Pagina_Comparare {
-Culoare_Fundal
+Tema_Pagina
+Afiseaza_Tema_Pagina()
 Afiseaza_Div_Pagina_Comparare ()
 }
 
@@ -281,7 +287,8 @@ Deschide_Pagina_Forum ()
 }
 
 class Pagina_Forum {
-Culoare_Fundal
+Tema_Pagina
+Afiseaza_Tema_Pagina()
 Afiseaza_Searchbar ()
 Afiseaza_Div_Subiect ()
 Afiseaza_Button_Scrie_Topic ()
@@ -331,7 +338,8 @@ Deschide_Pagina_Setari_App ()
 }
 
 class Pagina_Setari_App {
-Culoare_Fundal
+Tema_Pagina
+Afiseaza_Tema_Pagina ()
 Afiseaza_Switchbutton_Schimba_Tema_Pagina ()
 Afiseaza_Button_Stergere_Cont ()
 }
@@ -474,8 +482,10 @@ class Textbox_Replica {
 Inaltime
 Latime
 Input
-Memoreaza_Input ()
-Afiseaza_Input()
+Set_Input ()
+Get_Input ()
+Limiteaza_Caractere ()
+Incrementeaza_Nr_Caractere ()
 }
 
 class Button_Trimite_Replica {
@@ -483,14 +493,14 @@ Inaltime
 Latime
 Culoare
 Text
-Incarca_Input_Textbox_Replica ()
+Incarca_Input_Replica ()
 }
 
 class Fereastra_Scrie_Topic {
 Inaltime
 Latime
 Afiseaza_Textbox_Titlu ()
-Afiseaza_Textbox_ubiect ()
+Afiseaza_Textbox_Subiect ()
 Afiseaza_Button_Incarca_Postare ()
 }
 
@@ -498,16 +508,20 @@ class Textbox_Titlu {
 Inaltime
 Latime
 Input
-Memoreaza_Input ()
-Afiseaza_Input ()
+Set_Input ()
+Get_Input ()
+Limiteaza_Caractere ()
+Incrementeaza_Nr_Caractere ()
 }
 
 class Textbox_Subiect {
 Inaltime
 Latime
 Input
-Memoreaza_Input ()
-Afiseaza_Input ()
+Set_Input ()
+Get_Input ()
+Limiteaza_Caractere ()
+Incrementeaza_Nr_Caractere ()
 }
 
 class Button_Incarca_Postare {
@@ -515,8 +529,7 @@ Inaltime
 Latime
 Culoare
 Text
-Trimite_Input_Topic_Spre_Admin()
-Incarca_Postarea ()
+Incarca_Input_Subiect()
 }
 
 Landing_Page "1" *-- "1" Div_Landing_Page
@@ -540,7 +553,7 @@ Textbox_Parola  "1" o-- "1" Popup_Required
 Textbox_Email  "1" o-- "1" Popup_Required
 Textbox_Parola_Noua  "1" o-- "1" Popup_Required
 Textbox_Confirmare_Parola_Noua  "1" o-- "1" Popup_Required
-Pagina_Resetare_Parola "1" o-- "1" Popup_Parola_Schimbata
+Pagina_Resetare_Parola "1" *-- "1" Popup_Parola_Schimbata
 Baza_Date_Conturi "1" o-- "0..n" Cont_Utilizator
 Cont_Utilizator "1" *-- "1" Email_Cont
 Cont_Utilizator "1" *-- "1" Parola_Cont

@@ -9,7 +9,7 @@
 Utilizatorul deschide browserul.
 Utilizatorul va introduce link-ul aplicatiei in bara de adrese a brwoser-ului si va apasa enter.
 
-Dupa ce utilizatorul apasa tasta "enter", se va afisa Landing Page care va contine un mesaj "Welcome to CarHub!" si un div central impartit in 2,
+Dupa ce utilizatorul apasa tasta "enter", se va afisa Landing Page care va contine un mesaj "Welcome to CarHub!",va avea tema paginii prestabilita si un div central impartit in 2,
 in partea stanga va fi formularul de autentificare iar in dreapta formularul de inregistrare. Pe partea de formular de autentificare se va afisa deasupra formularului, dar in div,
 mesajul "Ai cont?Autentifica-te" iar pe partea de formular de inregistrare se va afisa deasupra formularului, dar in div, mesajul "Nu ai cont?Creaza unul".
 Formularul de autentificare contine un email_textbox , password_textbox, checkbutton cu textul "Tine-ma minte" , butonul "Autentificare" si un buton "Am uitat parola".
@@ -76,5 +76,4 @@ La apasarea searchbar-ului, utilizatorului ii este permisa scrierea. Cand utiliz
 baza cuvintelor si se vor afisa subiectele care au o potrivire de cuvinte.
 La apasarea butonului din dreapta jos al paginii, se va deschide o fereastra de redactare a unui subiect de discutie cu urmatoarele continute: textbox pentru a scrie titlul
 postarii, textbox pentru a scrie detaliat despre ceea ce vrei sa discuti si un buton de incarca postare. Textbox-urile trebuie sa fie completate pentru a putea incarca.
-La completarea textbox-urilor si apasarea butonului incarca, informatiile vor fi trimise la verificat la admin pentru a nu fi scrise doar caractere aleatorii. Daca ceea ce a fost
-scris este in regula, subiectele de discutie se vor afisa in pagina "Forum" iar daca nu sunt in regula, admin va sterge informatia.
+La completarea textbox-urilor si apasarea butonului incarca, informatiile vor fi incarcate in pagina "Forum".

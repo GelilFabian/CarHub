@@ -55,9 +55,7 @@ package 3)Forum {
     usecase "Se va executa algoritmul \n de cautare pe baza cuvintelor" as UC38
     usecase "Se vor afisa subiectele care \n au o potrivire de cuvinte" as UC39
     usecase "Se va deschide o \n fereastra de redactare \n a unui subiect de discutie" as UC40
-    usecase "Informatiile vor fi \n trimise la verificat la \n admin pentru a nu fi scrise \n doar caractere aleatorii" as UC41
-    usecase "Subiectele de discutie se \n vor afisa in pagina 'Forum'" as UC42
-    usecase "Admin va sterge informatia" as UC43
+    usecase "Subiectele de discutie se \n vor afisa in pagina 'Forum'" as UC41
 }
 
 'Landing Page
@@ -118,7 +116,6 @@ u -up-> UC38:Cand utilizatorul va \n apasa enter la searchbar
 UC38 -up->UC39
 u -up-> UC40:La apasarea butonului din \n dreapta jos al paginii
 u -up-> UC41:La completarea textbox-urilor \n si apasarea butonului incarca
-UC41 -up-> UC42:Daca ceea ce a fost \n scris este in regula
-UC41 -up-> UC43:Daca ceea ce a fost \n scris nu este in regula
+
 
 @enduml
