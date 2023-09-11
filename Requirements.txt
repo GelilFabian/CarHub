@@ -4,6 +4,7 @@
 'clasele boundry interactioneaza cu exteriorul
 'clasele entity memoreaza informatie
 'clsele control manageriaza informatia
+'boundary interactioneaza cu un control sau entity pentru a face o functionalitate
 
 Utilizatorul deschide browserul.
 Utilizatorul va introduce link-ul aplicatiei in bara de adrese a brwoser-ului si va apasa enter.
@@ -17,9 +18,10 @@ Formularul de inregistrare contine email_textbox(required si limita de caractere
 caracterelor introduse ajunge la numarul limitei de caractere, campul nu va mai lasa utilizatorul sa introduca alte caractere. De asemenea daca utilizatorul incearca sa apese
 pe butonul de inregistrare sau autentificare fara sa introduca datele in campuri, se va afisa un pop-up din campul respectiv cu mesajul "Required"
 
-Daca utilizatorul nu are cont creat, utilizatorul va completa campurile din formularul de inregistrare si va apasa butonul de "Inregistrare". Dupa apasarea butonului "Inregistrare",
-se va verifica email-ul pentru duplicate. Daca exista duplicat, se afiseaza mesaj "Email existent" si inregistrarea esueaza. Daca nu exista duplicat, email-ul si parola se vor salva
-in baza de date a conturilor si se va afisa Landing Page-ul pentru completarea campurilor din cadrul formularului de autentificare.
+Daca utilizatorul nu are cont creat, utilizatorul va completa campurile din formularul de inregistrare si va apasa butonul de "Inregistrare", dupa apasarea butonului "Inregistrare",
+se va verifica email-ul pentru duplicate in baza de date care contine lista de conturi. Daca exista duplicat, se afiseaza mesaj "Email existent" si inregistrarea esueaza.
+Daca nu exista duplicat, email-ul si parola se vor salva in baza de date a conturilor si se va afisa Landing Page-ul pentru completarea campurilor din cadrul formularului de
+autentificare.
 
 Pentru ca formularul sa tina minte email ul si parola utilizatorului(pentru a nu fi nevoit utilizatorul sa introduca email-ul si parola la fiecare accesare a site-ului),se vor
 completa campul email si campul parola si se va bifa checkbutton-ul "Tine-ma minte" inainte de apasarea butonului "Autentificare".

@@ -4,6 +4,8 @@ class Landing_Page{
 Culoare_Fundal
 Mesaj:"Welcome to CarHub!"
 Afiseaza_Div_Landing_Page()
+Afiseaza_Popup_Email_Parola_Gresite ()
+Afiseaza_Popup_Email_Existent ()
 }
 
 class Div_Landing_Page {
@@ -18,7 +20,11 @@ class Formular_Autentificare{
 Inaltime
 Latime
 Mesaj:"Ai cont?Autentifica-te"
-Afiseaza_Elemente_Formular ()
+Afiseaza_Button_Uitat_Parola ()
+Afiseaza_Button_Autentificare()
+Afiseaza_Checkbutton_Tine_Minte ()
+Afiseaza_Textbox_Email ()
+Afiseaza_Textbox_Parola ()
 }
 
 class Textbox_Email{
@@ -27,7 +33,8 @@ Latime
 Nr_Maxim_Caractere
 Email
 Afiseaza_Caractere()
-Memoreaza_Input ()
+Set_Email ()
+Get_Parola ()
 Limiteaza_Caractere ()
 Incrementeaza_Nr_Caractere ()
 Afiseaza_Popup_Required ()
@@ -38,7 +45,8 @@ Inaltime
 Latime
 Nr_Maxim_Caractere
 Parola
-Memoreaza_Input ()
+Set_Parola ()
+Get_Parola ()
 Limiteaza_Caractere ()
 Incrementeaza_Nr_Caractere ()
 Afiseaza_Popup_Required ()
@@ -47,9 +55,8 @@ Afiseaza_Popup_Required ()
 class Checkbutton_Tine_Minte{
 Stare
 Mesaj
-Memoreaza_Parola ()
-Memoreaza_Email ()
-
+Trimite_Request_Memorare_Email ()
+Trimite_Request_Memorare_Parola ()
 }
 
 class Button_Autentificare{
@@ -57,9 +64,9 @@ Inaltime
 Latime
 Text
 Culoare
-Trimite_Request_Verificare ()
+Trimite_Request_Verificare_Email ()
+Trimite_Request_Verificare_Parola ()
 Deschide_HomePage()
-Afiseaza_Popup_Email_Parola_Gresite ()
 }
 
 class Button_Uitat_Parola{
@@ -72,7 +79,11 @@ Deschide_Pagina_Schimbare_Parola()
 
 class Pagina_Resetare_Parola {
 Culoare_Fundal
-Afiseaza_Textboxuri_Resetare_Parola ()
+Afiseaza_Textbox_Email ()
+Afiseaza_Textbox_Parola_Noua ()
+Afiseaza_Textbox_Confirmare_Parola_Noua()
+Afiseaza_Button_Schimba_Parola ()
+Afiseaza_Popup_Parola_Schimbata ()
 }
 
 class Textbox_Parola_Noua {
@@ -80,8 +91,11 @@ Inaltime
 Latime
 Nr_Maxim_Caractere
 Parola
-Memoreaza_Input ()
+Set_Parola ()
+Get_Parola ()
 Limiteaza_Caractere ()
+Incrementeaza_Nr_Caractere ()
+Afiseaza_Popup_Required ()
 }
 
 class Textbox_Confirmare_Parola_Noua {
@@ -89,10 +103,11 @@ Inaltime
 Latime
 Nr_Maxim_Caractere
 Parola
-Memoreaza_Input ()
+Set_Parola ()
+Get_Parola ()
 Limiteaza_Caractere ()
 Incrementeaza_Nr_Caractere ()
-
+Afiseaza_Popup_Required ()
 }
 
 class Button_Schimba_Parola {
@@ -100,9 +115,8 @@ Latime
 Inaltime
 Text
 Culoare
-Trimite_Request_Schimbare_Parola ()
-Afiseaza_Popup_Parola_Schimbata ()
-Intoarce_pe_Landing_Page ()
+Trimite_Parola_Noua_la_Baza_Date ()
+Deschide_Landing_Page ()
 }
 
 class Popup_Parola_Schimbata {
@@ -120,7 +134,16 @@ Latime
 Afiseaza_Mesaj ()
 }
 
+class Popup_Email_Existent {
+Mesaj
+Inaltime
+Latime
+Afiseaza_Mesaj ()
+}
+
 class Cont_Utilizator{
+Creaza_Contul()
+Get_Parola_Noua()
 Inregistreaza_Cont ()
 Verifica_Email_Duplicat ()
 }
@@ -141,7 +164,10 @@ class Formular_Inregistrare{
 Inaltime
 Latime
 Mesaj:"Nu ai cont?Creaza unul"
-Afiseaza_Elemente_Formular ()
+Afiseaza_Textbox_Email ()
+Afiseaza_Textbox_Parola ()
+Afiseaza_Textbox_Confirmare_Parola ()
+Afiseaza_Button_Inregistrare ()
 }
 
 class Textbox_Confirmare_Parola {
@@ -149,7 +175,8 @@ Inaltime
 Latime
 Nr_Maxim_Caractere
 Parola
-Memoreaza_Input ()
+Set_Parola ()
+Get_Parola ()
 Limiteaza_Caractere ()
 Afiseaza_Popup_Required ()
 Incrementeaza_Nr_Caractere ()
@@ -160,15 +187,15 @@ Inaltime
 Latime
 Culoare
 Text
-Trimite_Date_Cont_Baza_Date ()
-Creaza_Contul()
-Verifica_Email_Duplicat()
-Afiseaza_Mesaj_Email_Inexistent ()
+Trimite_Email_la_Baza_Date ()
+Trimite_Parola_la_Baza_Date ()
 }
 
 class Baza_Date_Conturi{
 Lista_Conturi
 Stocheaza_Conturile()
+Sterge_Cont_Baza_Date()
+
 }
 
 class Popup_Email_Parola_Gresite{
@@ -176,6 +203,7 @@ Mesaj
 Inaltime
 Latime
 Afiseaza_Mesaj()
+Afiseaza_Button_Reincearca ()
 }
 
 class Buton_Reincearca{
@@ -197,7 +225,9 @@ class Navbar {
 Culoare_Fundal
 Inaltime
 Latime
-Afiseaza_Butoane_Navbar ()
+Afiseaza_Button_Profil_Utilizator ()
+Afiseaza_Button_Comparare ()
+Afiseaza_Button_Forum ()
 }
 
 class Div_Stire{
@@ -226,7 +256,7 @@ Deschide_Pagina_Profil_Utilizator ()
 
 class Pagina_Profil_Utilizator {
 Culoare_Fundal
-Afiseaza_Elemente_Profil_Utilizator ()
+Afiseaza_Div_Detalii_Cont ()
 }
 
 class Button_Comparare {
@@ -239,7 +269,7 @@ Deschide_Pagina_Comparare ()
 
 class Pagina_Comparare {
 Culoare_Fundal
-Afiseaza_Elemente_Pagina_Comparare ()
+Afiseaza_Div_Pagina_Comparare ()
 }
 
 class Button_Forum {
@@ -252,7 +282,9 @@ Deschide_Pagina_Forum ()
 
 class Pagina_Forum {
 Culoare_Fundal
-Afiseaza_Elemente_Forum ()
+Afiseaza_Searchbar ()
+Afiseaza_Div_Subiect ()
+Afiseaza_Button_Scrie_Topic ()
 }
 
 class Poza_Profil_Cont{
@@ -300,25 +332,28 @@ Deschide_Pagina_Setari_App ()
 
 class Pagina_Setari_App {
 Culoare_Fundal
-Afiseaza_Butoane_Setari_App ()
+Afiseaza_Switchbutton_Schimba_Tema_Pagina ()
+Afiseaza_Button_Stergere_Cont ()
 }
 
 class Div_Detalii_Cont {
 Inaltime
 Latime
 Afiseaza_Info_Masina ()
-Afiseaza_Caractere ()
-Afiseaza_Poza_Profil ()
+Afiseaza_Descriere_Cont ()
+Afiseaza_Poza_Profil_Cont ()
 Afiseaza_Nume_Cont ()
+Afiseaza_Button_Setari_App ()
+Afiseaza_Button_Editare_Profil ()
 }
 
-class Button_Schimba_Tema_Pagina {
+class Switchbutton_Schimba_Tema_Pagina {
 Inaltime
 Latime
 Text
 Culoare
-Schimba_Tema_Paginii()
-Afiseaza_Teme_Aplicatie ()
+Optiune
+Trimite_Request_Tema_Selectata ()
 }
 
 class Button_Stergere_Cont {
@@ -326,7 +361,6 @@ Inaltime
 Latime
 Text
 Culoare
-Sterge_Cont_Baza_Date()
 Deschide_Fereastra_Confirmare()
 }
 
@@ -342,14 +376,20 @@ class Tabel_Masina_A{
 Inaltime
 Latime
 Text:Masina A
-Afiseaza_Dropdownuri ()
+Afiseaza_Dropdown_Marca_Masina ()
+Afiseaza_Dropdown_Model_Masina ()
+Afiseaza_Dropdown_Motorizare_Masina()
+Afiseaza_Dropdown_Tip_Caroserie_Masina()
 }
 
 class Tabel_Masina_B {
 Inaltime
 Latime
 Text:Masina B
-Afiseaza_Dropdownuri ()
+Afiseaza_Dropdown_Marca_Masina ()
+Afiseaza_Dropdown_Model_Masina ()
+Afiseaza_Dropdown_Motorizare_Masina()
+Afiseaza_Dropdown_Tip_Caroserie_Masina()
 }
 
 class Button_Start_Comparare {
@@ -357,7 +397,7 @@ Inaltime
 Latime
 Text
 Culoare
-Afiseaza_Comparatia_Masinilor ()
+Trimite_Requet_Afisare_Comparare ()
 }
 
 class Dropdown_Marca_Masina {
@@ -449,9 +489,9 @@ Incarca_Input_Textbox_Replica ()
 class Fereastra_Scrie_Topic {
 Inaltime
 Latime
-Afiseaza_Textboxuri ()
+Afiseaza_Textbox_Titlu ()
+Afiseaza_Textbox_ubiect ()
 Afiseaza_Button_Incarca_Postare ()
-
 }
 
 class Textbox_Titlu {
@@ -480,6 +520,8 @@ Incarca_Postarea ()
 }
 
 Landing_Page "1" *-- "1" Div_Landing_Page
+Landing_Page "1" o-- "1" Popup_Email_Parola_Gresite
+Landing_Page "1" o-- "1" Popup_Email_Existent
 Div_Landing_Page "1" *-- "1" Formular_Autentificare
 Div_Landing_Page "1" *-- "1" Formular_Inregistrare
 Formular_Autentificare "1" *-- "1" Textbox_Email
@@ -493,6 +535,12 @@ Formular_Inregistrare "1" *-- "1" Textbox_Email
 Formular_Inregistrare "1" *-- "1" Textbox_Parola
 Formular_Inregistrare "1" *-- "1" Textbox_Confirmare_Parola
 Formular_Inregistrare "1" *-- "1" Button_Inregistrare
+Textbox_Confirmare_Parola "1" o-- "1" Popup_Required
+Textbox_Parola  "1" o-- "1" Popup_Required
+Textbox_Email  "1" o-- "1" Popup_Required
+Textbox_Parola_Noua  "1" o-- "1" Popup_Required
+Textbox_Confirmare_Parola_Noua  "1" o-- "1" Popup_Required
+Pagina_Resetare_Parola "1" o-- "1" Popup_Parola_Schimbata
 Baza_Date_Conturi "1" o-- "0..n" Cont_Utilizator
 Cont_Utilizator "1" *-- "1" Email_Cont
 Cont_Utilizator "1" *-- "1" Parola_Cont
@@ -511,14 +559,14 @@ Button_Profil_Utilizator .. Pagina_Profil_Utilizator:click
 Button_Comparare .. Pagina_Comparare:click
 Button_Forum .. Pagina_Forum:click
 Pagina_Profil_Utilizator "1" *-- "1" Div_Detalii_Cont
-Pagina_Profil_Utilizator "1" *-- "1" Button_Editare_Profil
-Pagina_Profil_Utilizator "1" *-- "1" Button_Setari_App
+Div_Detalii_Cont "1" *-- "1" Button_Editare_Profil
+Div_Detalii_Cont "1" *-- "1" Button_Setari_App
 Div_Detalii_Cont "1" *-- "0..1" Poza_Profil_Cont
 Div_Detalii_Cont "1" *-- "1" Nume_Cont
 Div_Detalii_Cont "1" *-- "0..1" Info_Masina
 Div_Detalii_Cont "1" *-- "0..1" Descriere_Cont
 Button_Setari_App .. Pagina_Setari_App:click
-Pagina_Setari_App "1" *-- "1" Button_Schimba_Tema_Pagina
+Pagina_Setari_App "1" *-- "1" Switchbutton_Schimba_Tema_Pagina
 Pagina_Setari_App "1" *-- "1" Button_Stergere_Cont
 Pagina_Comparare "1" *-- "1" Div_Pagina_Comparare
 Div_Pagina_Comparare "1" *-- "1" Tabel_Masina_A
@@ -547,4 +595,5 @@ Pagina_Resetare_Parola "1" *-- "1" Textbox_Email
 Pagina_Resetare_Parola "1" *-- "1" Textbox_Parola_Noua
 Pagina_Resetare_Parola "1" *-- "1" Textbox_Confirmare_Parola_Noua
 Pagina_Resetare_Parola "1" *-- "1" Button_Schimba_Parola
+
 @enduml
