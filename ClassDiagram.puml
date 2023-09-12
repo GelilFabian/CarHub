@@ -148,6 +148,7 @@ Creaza_Contul()
 Get_Parola_Noua()
 Inregistreaza_Cont ()
 Verifica_Email_Duplicat ()
+Deconecteaza_Cont ()
 }
 
 class Email_Cont {
@@ -355,6 +356,14 @@ Afiseaza_Button_Setari_App ()
 Afiseaza_Button_Editare_Profil ()
 }
 
+class Button_Salveaza_Modificari {
+Inaltime
+Latime
+Text
+Culoare
+Send_Info_DataBase ()
+}
+
 class Switchbutton_Schimba_Tema_Pagina {
 Inaltime
 Latime
@@ -370,6 +379,20 @@ Latime
 Text
 Culoare
 Deschide_Fereastra_Confirmare()
+}
+
+class Fereastra_Confirmare {
+Inaltime
+Latime
+Afiseaza_Button_Confirmare_Stergere_Cont()
+}
+
+class Button_Confirmare_Stergere_Cont {
+Inaltime
+Latime
+Text
+Culoare
+Trimite_Request_Stergere_Email_si_Parola ()
 }
 
 class Div_Pagina_Comparare {
@@ -449,6 +472,13 @@ Input_Text
 Memoreaza_Input_Text ()
 Cauta_Input_Text ()
 Face_Request_DB ()
+Afiseaza_Pagina_Rezultate_Cautari ()
+}
+
+class Pagina_Rezultate_Cautari {
+Tema_Pagina
+Lista_Cautari
+Afiseaza_Tema_Pagina ()
 Afiseaza_Lista_Cautari ()
 }
 
@@ -578,9 +608,12 @@ Div_Detalii_Cont "1" *-- "0..1" Poza_Profil_Cont
 Div_Detalii_Cont "1" *-- "1" Nume_Cont
 Div_Detalii_Cont "1" *-- "0..1" Info_Masina
 Div_Detalii_Cont "1" *-- "0..1" Descriere_Cont
+Div_Detalii_Cont "1" o-- "1" Button_Salveaza_Modificari
 Button_Setari_App .. Pagina_Setari_App:click
 Pagina_Setari_App "1" *-- "1" Switchbutton_Schimba_Tema_Pagina
 Pagina_Setari_App "1" *-- "1" Button_Stergere_Cont
+Button_Stergere_Cont .. Fereastra_Confirmare :click
+Fereastra_Confirmare "1" *-- "1" Button_Confirmare_Stergere_Cont
 Pagina_Comparare "1" *-- "1" Div_Pagina_Comparare
 Div_Pagina_Comparare "1" *-- "1" Tabel_Masina_A
 Div_Pagina_Comparare "1" *-- "1" Tabel_Masina_B
@@ -596,6 +629,7 @@ Tabel_Masina_B "1" *-- "1" Dropdown_Tip_Caroserie_Masina
 Pagina_Forum "1" *-- "0..n" Div_Subiect
 Pagina_Forum "1" *-- "1" Searchbar
 Pagina_Forum "1" *-- "1" Button_Scrie_Topic
+Searchbar .. Pagina_Rezultate_Cautari :click
 Div_Subiect .. Pagina_Subiect:Click
 Pagina_Subiect "1" *-- "0..n" Div_Replici_Discutie
 Pagina_Subiect "1" *-- "1" Textbox_Replica

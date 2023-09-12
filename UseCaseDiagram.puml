@@ -33,7 +33,7 @@ package 1)Profil_Utilizator {
     usecase "Se va actualiza baza de \n date cu informatiile modificate" as UC22
     usecase "Pagina va iesi \n din modul de editare." as UC23
     usecase "Se va deschide o pagina \n care contine un buton pentru \n schimbarea temei paginii si un \n buton pentru stergerea contului." as UC24
-    usecase "Se va afisa o pagina cu 3 variante \n de alegere: automat, light sau dark" as UC25
+    usecase "Se va schimba pe tema opusa \n fata de optiunea curenta selectata" as UC25
     usecase "Aplicatia va avea drept \n culoare principala alb" as UC26
     usecase "Aplicatia va avea drept \n culoare principala gri graphite" as UC27
     usecase "Se va afisa o fereastra cu \n un buton de confirmare" as UC28

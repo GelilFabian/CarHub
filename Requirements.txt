@@ -31,11 +31,14 @@ La completarea acestor textbox-uri si apasarea butonului "Schimba parola", se va
 popup-ul "Parola schimbata cu succes" pentru 5 secunde si apoi va disparea, urmand ca pagina sa trimita utilizatorul inapoi pe Landing Page.
 
 Dupa ce utilizatorul va apasa pe butonul "Autentificare", se va trimite un request catre baza de date pentru a verifica corectitudinea informatiei din campurile respective.
-Daca email sau parola sunt gresite sau daca nu se vor completa campurile,pagina va afisa un pop up cu mesajul "Email sau parola gresite" si un buton de
-"Reincearca".Dupa apasarea butonului "Reincearca", fereastra pop up se va inchide si va permite utilizatorului sa editeze campurile text.
+Daca email sau parola sunt gresite ,pagina va afisa un pop up cu mesajul "Email sau parola gresite" si un buton de "Reincearca".Dupa apasarea butonului "Reincearca", fereastra
+pop up se va inchide.
 
-Daca datele sunt corecte, se va afisa Home Page care contine in partea stanga un NavBar si in centru, Home Page va afisa cate un div care
-contine o poza si o scurta descriere a unei stiri din domeniul auto, iar la apasarea oricarui div, se va deschide o alta pagina care contine toata informatia despre acea stire.
+Daca utilizatorul va inchide aplicatia din Landing Page sau se opreste aplicatia brusc sau se ia curentul, ceea ce a fost scris in textbox-uri se va sterge.
+
+Daca datele sunt corecte, se va afisa Home Page care contine in partea stanga un NavBar, in mijloc sus textul "Welcome 'user'", user urmand sa fie inlocuit cu numele utilizatorului
+preluat din baza de date si in centru, Home Page va afisa cate un div care contine o poza si o scurta descriere a unei stiri din domeniul auto, iar la apasarea oricarui div, se va
+deschide o alta pagina care contine toata informatia despre acea stire.
 Navbar-ul contine 3 butoane: 1)Profil Utilizator, 2)Comparare, 3)Forum.
 Aceste stiri vor fi adaugate de un admin in sectiunea din mijlocul Home Page-ului.
 Daca utilizatorul se afla in partea de top sau mid a Home Page-ului si da scroll-down, se vor incarca stirile mai vechi.
@@ -44,13 +47,13 @@ Daca utilizatorul se afla in partea de bottom sau mid a Home Page-ului si da scr
 1)Profil utilizator:
 Cand utilizatorul face click pe acest link, se va afisa o pagina care contine acelasi NavBar in partea stanga iar pe mijloc va fi afisata sectiunea detalilor contului
 unde se va afla poza de profil a utilizatorului impreuna cu numele acestuia langa ea, sub se vor afisa informatiile masinii, cum ar fi: brand-ul masinii, modelul,
-anul fabricatiei, motorizarea, o mica descriere, buton pentru editare profil si un buton pentru setarile aplicatiei.
-Cand utilizatorul va apasa butonul de editare profil, pagina va permite utilizatorului sa editeze campul de nume si campul de informatii ale masinii si se va afisa
+anul fabricatiei, motorizarea, o mica descriere, buton pentru editare profil si un buton pentru setarile aplicatiei. Numele contului prestabilit va fi "User" pana la schimbarea acestuia.
+Cand utilizatorul va apasa butonul de editare profil, pagina va ramane aceeasi, dar va permite utilizatorului sa editeze campul de nume si campul de informatii ale masinii si se va afisa
 un buton de salvare a modificarilor facute. La apasarea butonului de salvare a modificarilor, se va actualiza baza de date cu informatiile modificate si pagina va iesi din modul
-de editare. //nu stiu daca Pagina profil utilizator are ca agregate butonul de salvare modificari
+de editare.
 Cand utilizatorul va apasa butonul de setari ale aplcatiei, se va deschide o pagina care contine un buton pentru schimbarea temei paginii(light sau dark) si un buton
 pentru stergerea contului.
-Cand utilizatorul va apasa pe butonul de schimbare a temei paginii, se va afisa o pagina cu 3 variante de alegere: automat(prestabilit), light sau dark.
+Cand utilizatorul va apasa pe butonul de schimbare a temei paginii, se va schimba pe tema opusa fata de optiunea curenta selectata.
 La alegerea temei light, aplicatia va avea drept culoare principala alb, iar la alegerea temei dark, culoarea principala in aplicatie va fi un gri graphite.
 La apasarea de catre utilizator a butonului de stergere a contului, se va afisa o fereastra cu un buton de confirmare.
 La apasarea butonului de confirmare a stergerii contului, se va afisa Landing Page si se va trimite un request catre baza de date pentru stergerea
@@ -73,7 +76,7 @@ La accesarea unui subiect, se va deschide fereastra dedicata acelei discutiei, c
 a scrie o replica la o postare, alaturi de un buton de trimite. La completarea textbox-ului si apasarea butonului trimite, se va posta ca replica raspunsul tau, sub ultima replica
 cea mai recenta.
 La apasarea searchbar-ului, utilizatorului ii este permisa scrierea. Cand utilizatorul va apasa enter la searchbar, se va executa algoritmul de cautare pe
-baza cuvintelor si se vor afisa subiectele care au o potrivire de cuvinte.
+baza cuvintelor si se vor afisa pe o pagina noua subiectele care au o potrivire de cuvinte.
 La apasarea butonului din dreapta jos al paginii, se va deschide o fereastra de redactare a unui subiect de discutie cu urmatoarele continute: textbox pentru a scrie titlul
 postarii, textbox pentru a scrie detaliat despre ceea ce vrei sa discuti si un buton de incarca postare. Textbox-urile trebuie sa fie completate pentru a putea incarca.
 La completarea textbox-urilor si apasarea butonului incarca, informatiile vor fi incarcate in pagina "Forum".
