@@ -9,14 +9,15 @@
 Utilizatorul deschide browserul.
 Utilizatorul va introduce link-ul aplicatiei in bara de adrese a brwoser-ului si va apasa enter.
 
-Dupa ce utilizatorul apasa tasta "enter", se va afisa Landing Page care va contine un mesaj "Welcome to CarHub!",va avea tema paginii prestabilita si un div central impartit in 2,
+Dupa ce utilizatorul apasa tasta "enter", se va afisa Landing Page care va contine un mesaj "Bine ai venit pe CarHub!",va avea o imagine de fundal si un div plasat spre stanga impartit in 2,
 in partea stanga va fi formularul de autentificare iar in dreapta formularul de inregistrare. Pe partea de formular de autentificare se va afisa deasupra formularului, dar in div,
 mesajul "Ai cont?Autentifica-te" iar pe partea de formular de inregistrare se va afisa deasupra formularului, dar in div, mesajul "Nu ai cont?Creaza unul".
 Formularul de autentificare contine un email_textbox , password_textbox, checkbutton cu textul "Tine-ma minte" , butonul "Autentificare" si un buton "Am uitat parola".
-Formularul de inregistrare contine email_textbox(required si limita de caractere de 16), password_textbox(required si limita de caractere 16), confirm_password_textbox
-(required si limita de caractere 16) si butonul "Inregistrare".La introducerea fiecarui caracter in aceste campuri, se va incrementa numarul de caractere introduse. Daca numarul
+Formularul de inregistrare contine email_textbox(required si limita de caractere de 25), password_textbox(required si limita de caractere 15), confirm_password_textbox
+(required si limita de caractere 15) si butonul "Inregistrare".La introducerea fiecarui caracter in aceste campuri, se va incrementa numarul de caractere introduse. Daca numarul
 caracterelor introduse ajunge la numarul limitei de caractere, campul nu va mai lasa utilizatorul sa introduca alte caractere. De asemenea daca utilizatorul incearca sa apese
-pe butonul de inregistrare sau autentificare fara sa introduca datele in campuri, se va afisa un pop-up din campul respectiv cu mesajul "Required"
+pe butonul de inregistrare sau autentificare fara sa introduca datele in campuri, se va afisa un pop-up din campul respectiv cu mesajul "Required". Daca introduce mai putin de 8
+caractere, se va afisa pop-up-ul "Introdu minim 8 caractere".
 
 Daca utilizatorul nu are cont creat, utilizatorul va completa campurile din formularul de inregistrare si va apasa butonul de "Inregistrare", dupa apasarea butonului "Inregistrare",
 se va verifica email-ul pentru duplicate in baza de date care contine lista de conturi. Daca exista duplicat, se afiseaza mesaj "Email existent" si inregistrarea esueaza.
